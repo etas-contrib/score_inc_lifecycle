@@ -1,7 +1,6 @@
 demo/tmp
 demo/config/tmp
 bazel-*
-*.lock
 .vscode
 rust-project.json
 __pycache__/

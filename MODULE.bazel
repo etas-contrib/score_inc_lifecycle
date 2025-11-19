@@ -153,20 +153,16 @@ git_override(
 
 # Rust crate
 crate = use_extension("@rules_rust//crate_universe:extensions.bzl", "crate")
-crate.spec(
-    features = ["derive"],
-    package = "clap",
-    version = "4.5.49",
+crate.from_cargo(
+    name = "crates",
+    cargo_lockfile = "//:Cargo.lock",
+    manifests = [
+        "//:Cargo.toml",
+        "//rust_bindings/lifecycle_client_rs:Cargo.toml",
+        "//rust_bindings/monitor_rs:Cargo.toml",
+        "//demo/rust_supervised_app:Cargo.toml",
+    ],
 )
-crate.spec(
-    package = "libc",
-    version = "0.2.177",
-)
-crate.spec(
-    package = "signal-hook",
-    version = "0.3.18",
-)
-crate.from_specs()
 use_repo(crate, "crates")
 
 # ACL
