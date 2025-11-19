@@ -1,4 +1,15 @@
-// (c) 2025 ETAS GmbH. All rights reserved.
+/********************************************************************************
+* Copyright (c) 2025 Contributors to the Eclipse Foundation
+*
+* See the NOTICE file(s) distributed with this work for additional
+* information regarding copyright ownership.
+*
+* This program and the accompanying materials are made available under the
+* terms of the Apache License Version 2.0 which is available at
+* https://www.apache.org/licenses/LICENSE-2.0
+*
+* SPDX-License-Identifier: Apache-2.0
+********************************************************************************/
 #include "etas/vrte/saf/factory/MachineConfigFactory.hpp"
 
 #include <limits>
@@ -65,7 +76,7 @@ bool MachineConfigFactory::init() noexcept(false)
     std::unique_ptr<char[]> loadBuffer_p = read_flatbuffer_file("hmcore.bin");
     if(!loadBuffer_p) {
         logger_r.LogInfo() << kLogPrefix << "No HM Machine Configuration found. Using default configuration.";
-        logConfiguration();        
+        logConfiguration();
         return true;
     }
 

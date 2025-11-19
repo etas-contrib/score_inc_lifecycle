@@ -1,4 +1,15 @@
-// (c) 2025 ETAS GmbH. All rights reserved.
+/********************************************************************************
+* Copyright (c) 2025 Contributors to the Eclipse Foundation
+*
+* See the NOTICE file(s) distributed with this work for additional
+* information regarding copyright ownership.
+*
+* This program and the accompanying materials are made available under the
+* terms of the Apache License Version 2.0 which is available at
+* https://www.apache.org/licenses/LICENSE-2.0
+*
+* SPDX-License-Identifier: Apache-2.0
+********************************************************************************/
 
 #include "etas/vrte/saf/watchdog/DeviceIf.hpp"
 
@@ -36,7 +47,7 @@ std::int32_t DeviceIf::open(const char* f_pathname_p, std::int32_t f_flags) noex
     // qnx has no O_TMPFILE flag
 #if defined(__linux__)
     assert((f_flags & O_TMPFILE) == 0);
-#endif 
+#endif
 
     return ::open(f_pathname_p, f_flags);
 }

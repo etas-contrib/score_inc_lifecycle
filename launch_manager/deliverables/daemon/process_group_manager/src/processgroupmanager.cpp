@@ -1,4 +1,15 @@
-// (c) 2025 ETAS GmbH. All rights reserved.
+/********************************************************************************
+* Copyright (c) 2025 Contributors to the Eclipse Foundation
+*
+* See the NOTICE file(s) distributed with this work for additional
+* information regarding copyright ownership.
+*
+* This program and the accompanying materials are made available under the
+* terms of the Apache License Version 2.0 which is available at
+* https://www.apache.org/licenses/LICENSE-2.0
+*
+* SPDX-License-Identifier: Apache-2.0
+********************************************************************************/
 
 #include <fcntl.h>
 #include <unistd.h>
@@ -293,7 +304,7 @@ inline void ProcessGroupManager::allProcessGroupsOff() {
                 osal::ProcessID pid = node->getPid();
                 if( pid > 0 )
                 {
-                    process_interface_.forceTermination( pid);        
+                    process_interface_.forceTermination( pid);
                 }
             }
         }
@@ -530,7 +541,7 @@ inline void ProcessGroupManager::processGroupHandler(Graph& pg) {
             //
             // in short, graph is in an error state (kUndefinedState)
             // and there is no valid request from outside, to change this situation...
-            // 
+            //
             // we will try to perform recovery action
 
             ProcessGroupStateID recovery_state;

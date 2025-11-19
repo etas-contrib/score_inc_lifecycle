@@ -1,4 +1,15 @@
-// (c) 2025 ETAS GmbH. All rights reserved.
+/********************************************************************************
+* Copyright (c) 2025 Contributors to the Eclipse Foundation
+*
+* See the NOTICE file(s) distributed with this work for additional
+* information regarding copyright ownership.
+*
+* This program and the accompanying materials are made available under the
+* terms of the Apache License Version 2.0 which is available at
+* https://www.apache.org/licenses/LICENSE-2.0
+*
+* SPDX-License-Identifier: Apache-2.0
+********************************************************************************/
 
 #include <unistd.h>
 #include <iostream>
@@ -52,7 +63,7 @@ bool runLCMDaemon(ProcessGroupManager& process_group_manager) {
 int main([[maybe_unused]] int argc, [[maybe_unused]] char const* argv[]) {
     int exit_code = EXIT_FAILURE;
 
-    // reserve files descriptor osal::IpcCommsSync::sync_fd and osal::IpcCommsSync::sync_fd + 1 for child process communication 
+    // reserve files descriptor osal::IpcCommsSync::sync_fd and osal::IpcCommsSync::sync_fd + 1 for child process communication
     int fd = open ("/dev/null", O_WRONLY);
     if(dup2(fd, osal::IpcCommsSync::sync_fd) == -1) {
         std::cerr << "Failed to open file descriptor fd: " << std::strerror(errno) << std::endl;
