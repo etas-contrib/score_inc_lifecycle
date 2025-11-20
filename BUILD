@@ -37,6 +37,20 @@ copyright_checker(
     visibility = ["//visibility:public"],
 )
 
+filegroup(
+  name = "build_all",
+  srcs = [
+    "//launch_manager:launch_manager",
+    "//launch_manager:lifecycle_client",
+    "//launch_manager:control_client",
+    "//launch_manager:process_state_client",
+    "//health_monitor:health_monitor",
+    "//health_monitor:hm_shared_lib",
+    "//rust_bindings/monitor_rs",
+    "//rust_bindings/lifecycle_client_rs",
+  ]
+)
+
 # Needed for Dash tool to check python dependency licenses.
 filegroup(
     name = "cargo_lock",
