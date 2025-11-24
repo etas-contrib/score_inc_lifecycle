@@ -402,7 +402,7 @@ static void setSchedulingParameters(const Process& node, const ProcessStartupCon
     if (attribute != nullptr) {
         instance.startup_config_.scheduling_priority_ = std::stoi(attribute->c_str());
     }
-    attribute = node.vrte_coremask();
+    attribute = node.coremask();
     if (attribute != nullptr) {
         instance.startup_config_.cpu_mask_ = static_cast<uint32_t>(std::stoul(attribute->c_str()) & 0XFFFFFFFFUL);
     }
@@ -424,21 +424,21 @@ bool ConfigurationManager::parseProcessConfigurations(const Process* node) {
             }
 
             setSchedulingParameters(*node, *startup_config_node, instance);
-            // Set executable path from node's vrte_path
-            instance.startup_config_.executable_path_ = getStringFromFlatBuffer(node->vrte_path());
+            // Set executable path from node's path
+            instance.startup_config_.executable_path_ = getStringFromFlatBuffer(node->path());
             LM_LOG_DEBUG() << "parseProcessConfigurations: Process index:" << instance.process_number_
                            << "executable_path_:" << instance.startup_config_.executable_path_;
 
             instance.startup_config_.short_name_ = node->identifier() ? node->identifier()->c_str() : "Unknown";
-            instance.startup_config_.uid_ = node->vrte_uid() & 0x7FFFFFFFU;
-            instance.startup_config_.gid_ = node->vrte_gid() & 0x7FFFFFFFU;
+            instance.startup_config_.uid_ = node->uid() & 0x7FFFFFFFU;
+            instance.startup_config_.gid_ = node->gid() & 0x7FFFFFFFU;
 
             instance.startup_config_.security_policy_ =
-                getStringFromFlatBuffer(node->vrte_securityPolicyDetails());  // Set security policy if available
+                getStringFromFlatBuffer(node->securityPolicyDetails());  // Set security policy if available
 
             // extracting supplementary group IDs from Process configuration
             // and assigning them to this particular startup config (aka OsProcess)
-            auto supplementary_gids = node->vrte_sgids();
+            auto supplementary_gids = node->sgids();
             size_t supplementary_gids_number = supplementary_gids ? supplementary_gids->size() : 0U;
             if (supplementary_gids_number > 0U) {
                 instance.startup_config_.supplementary_gids_.reserve(supplementary_gids_number);
@@ -446,7 +446,7 @@ bool ConfigurationManager::parseProcessConfigurations(const Process* node) {
             for (uint32_t i = 0U; i < (supplementary_gids_number & 0XFFFFFFFFU); i++) {
                 const ProcessSgid* sgid_conf = supplementary_gids->Get(i);
                 if (nullptr != sgid_conf) {
-                    instance.startup_config_.supplementary_gids_.push_back(sgid_conf->vrte_sgid());
+                    instance.startup_config_.supplementary_gids_.push_back(sgid_conf->sgid());
                 }
             }
 
