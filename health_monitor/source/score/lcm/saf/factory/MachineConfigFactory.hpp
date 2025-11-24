@@ -29,7 +29,7 @@ struct HMCOREEcuCfg;
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -145,7 +145,7 @@ private:
 
 }  // namespace factory
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

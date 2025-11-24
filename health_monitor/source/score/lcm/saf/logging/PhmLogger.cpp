@@ -17,7 +17,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -109,5 +109,5 @@ Stream PhmLogger::LogVerbose() noexcept
 
 }  // namespace logging
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

@@ -22,7 +22,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -59,5 +59,5 @@ std::int32_t DeviceIf::close(std::int32_t f_fd) noexcept
 
 }  // namespace watchdog
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

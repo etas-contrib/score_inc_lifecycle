@@ -19,7 +19,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -113,7 +113,7 @@ private:
 
 }  // namespace timers
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

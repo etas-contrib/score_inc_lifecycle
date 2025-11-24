@@ -21,7 +21,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -233,7 +233,7 @@ score::lcm::GlobalSupervisionStatus Global::getStatus(void) const noexcept
     return globalStatus;
 }
 
-void Global::registerRecoveryNotification(score::vrte::saf::recovery::Notification& f_notification_r)
+void Global::registerRecoveryNotification(score::lcm::saf::recovery::Notification& f_notification_r)
 {
     // Register the Recovery Notification by adding a pointer to it in a vector
     registeredRecoveryNotifications.push_back(&f_notification_r);
@@ -459,7 +459,7 @@ void Global::switchToStopped(EGlobalStoppedReason f_reason) noexcept
 
     for (auto notification : registeredRecoveryNotifications)
     {
-        xaap::vrte::saf::recovery::supervision::SupervisionErrorInfo errorInfo{};
+        xaap::lcm::saf::recovery::supervision::SupervisionErrorInfo errorInfo{};
         errorInfo.failedProcessExecutionError = executionError;
 
         // Should always be true otherwise send recovery information will be wrong
@@ -561,5 +561,5 @@ bool Global::isDebounced(timers::NanoSecondType f_time) noexcept
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

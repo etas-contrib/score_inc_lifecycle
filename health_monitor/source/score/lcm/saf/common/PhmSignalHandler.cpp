@@ -19,7 +19,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -115,5 +115,5 @@ bool PhmSignalHandler::registerHandler(void) noexcept(true)
 
 }  // namespace common
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

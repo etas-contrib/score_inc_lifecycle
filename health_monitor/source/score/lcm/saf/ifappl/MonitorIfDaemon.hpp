@@ -23,7 +23,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -97,7 +97,7 @@ public:
     /// @brief Check for new data
     /// @details Check Monitor interface for new data from application side
     /// @param [in]  f_syncTimestamp    Timestamp till data shall be read, newer data will not be considered
-    void checkForNewData(const score::vrte::saf::timers::NanoSecondType f_syncTimestamp) noexcept(true);
+    void checkForNewData(const score::lcm::saf::timers::NanoSecondType f_syncTimestamp) noexcept(true);
 
 private:
     /// @brief Check if checkpoint ring buffer overflow has occurred
@@ -120,7 +120,7 @@ private:
     /// @details The checkpoint ring buffer data is pushed to checkpoint specific objects.
     /// @param [in]  f_syncTimestamp        Timestamp till data shall be read, newer data will not be considered
     /// @returns True if reading data from IPC channel and pushing data to observers was successful, else false
-    bool pushNewDataToCheckpointObservers(const score::vrte::saf::timers::NanoSecondType f_syncTimestamp);
+    bool pushNewDataToCheckpointObservers(const score::lcm::saf::timers::NanoSecondType f_syncTimestamp);
 
     /// @brief Push a single checkpoint to observers
     /// @param[in] f_elem_r The checkpoint to push to observers
@@ -161,7 +161,7 @@ private:
 
 }  // namespace ifappl
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

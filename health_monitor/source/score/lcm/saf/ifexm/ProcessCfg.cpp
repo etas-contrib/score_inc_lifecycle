@@ -15,7 +15,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -26,5 +26,5 @@ constexpr ProcessCfg::ProcessExecutionError ProcessCfg::kDefaultProcessExecution
 
 }  // namespace ifexm
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

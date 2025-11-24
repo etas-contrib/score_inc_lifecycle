@@ -17,7 +17,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -189,5 +189,5 @@ constexpr ProcessState::EProcState ProcessStateReader::translateProcessState(
 
 }  // namespace ifexm
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

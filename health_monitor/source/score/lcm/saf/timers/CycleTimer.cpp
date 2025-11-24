@@ -15,7 +15,7 @@
 #include "score/lcm/saf/timers/TimeConversion.hpp"
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -25,7 +25,7 @@ namespace timers
 using constexpr enforces constant initialization by the compiler", false) */
 constexpr int CycleTimer::kDeadlineAlreadyOver;
 
-CycleTimer::CycleTimer(score::vrte::saf::timers::OsClockInterface const* f_osInterface) noexcept :
+CycleTimer::CycleTimer(score::lcm::saf::timers::OsClockInterface const* f_osInterface) noexcept :
     osInterface{f_osInterface}, sleepIntervalNs{0}, deadline{}
 {
     static_cast<void>(0U);
@@ -100,5 +100,5 @@ void CycleTimer::handleNanoSecOverflow() noexcept(true)
 
 }  // namespace timers
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

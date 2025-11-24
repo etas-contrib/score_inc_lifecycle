@@ -15,7 +15,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -80,7 +80,7 @@ bool Notification::initProxy() noexcept(false)
     return true;
 }
 
-void Notification::send(const xaap::vrte::saf::recovery::supervision::SupervisionErrorInfo& f_executionErrorInfo_r)
+void Notification::send(const xaap::lcm::saf::recovery::supervision::SupervisionErrorInfo& f_executionErrorInfo_r)
 {
     if (isNotificationConfigAvailable)
     {
@@ -185,5 +185,5 @@ const std::string& Notification::getConfigName(void) const noexcept
 
 }  // namespace recovery
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

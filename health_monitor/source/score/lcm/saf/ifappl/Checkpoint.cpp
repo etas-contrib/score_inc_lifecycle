@@ -15,7 +15,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -79,5 +79,5 @@ const ifexm::ProcessState* Checkpoint::getProcess(void) const noexcept(true)
 
 }  // namespace ifappl
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

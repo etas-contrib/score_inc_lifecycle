@@ -36,7 +36,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -640,8 +640,8 @@ bool FlatCfgFactory::createDeadlineSupervisions(std::vector<supervision::Deadlin
             {
                 // Collect Deadline Supervision configuration
                 const char* nameCfgDeadline_p{hmDeadlineSupervision_p->ruleContextKey()->c_str()};
-                score::vrte::saf::timers::NanoSecondType minDeadlineTemp{0U};
-                score::vrte::saf::timers::NanoSecondType maxDeadlineTemp{0U};
+                score::lcm::saf::timers::NanoSecondType minDeadlineTemp{0U};
+                score::lcm::saf::timers::NanoSecondType maxDeadlineTemp{0U};
                 bool flagMinCheckDisabled{false};
                 bool flagMaxCheckDisabled{false};
 
@@ -1043,5 +1043,5 @@ std::optional<common::ProcessId> FlatCfgFactory::getProcessId(const std::string&
 
 }  // namespace factory
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

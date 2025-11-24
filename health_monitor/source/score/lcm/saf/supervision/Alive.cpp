@@ -21,7 +21,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -53,7 +53,7 @@ Alive::Alive(const AliveSupervisionCfg& f_aliveCfg_r) :
 }
 
 // coverity[exn_spec_violation:FALSE] std::length_error is not thrown from push() which uses fixed-size-vector
-void Alive::updateData(const score::vrte::saf::ifappl::Checkpoint& f_observable_r) noexcept(true)
+void Alive::updateData(const score::lcm::saf::ifappl::Checkpoint& f_observable_r) noexcept(true)
 {
     timers::NanoSecondType timestamp{f_observable_r.getTimestamp()};
 
@@ -570,5 +570,5 @@ void Alive::logExpiredFailedStateDetails() const noexcept(true)
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

@@ -14,7 +14,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -22,7 +22,7 @@ namespace timers
 {
 
 int64_t CycleTimeValidator::getMonotonicClockAccuracy(
-    score::vrte::saf::timers::OsClockInterface const& f_clock_sys) noexcept(true)
+    score::lcm::saf::timers::OsClockInterface const& f_clock_sys) noexcept(true)
 {
     struct timespec clockResolution
     {
@@ -39,11 +39,11 @@ int64_t CycleTimeValidator::getMonotonicClockAccuracy(
 }
 
 int64_t CycleTimeValidator::adjustCycleTimeOnClockAccuracy(
-    const int64_t f_requested_interval_ns, const score::vrte::saf::timers::OsClockInterface& f_clock_sys) noexcept(true)
+    const int64_t f_requested_interval_ns, const score::lcm::saf::timers::OsClockInterface& f_clock_sys) noexcept(true)
 {
     int64_t intervalNs{-1};  // start with an invalid value
 
-    const int64_t accuracyNs{score::vrte::saf::timers::CycleTimeValidator::getMonotonicClockAccuracy(f_clock_sys)};
+    const int64_t accuracyNs{score::lcm::saf::timers::CycleTimeValidator::getMonotonicClockAccuracy(f_clock_sys)};
 
     if (0 < accuracyNs)
     {
@@ -62,5 +62,5 @@ int64_t CycleTimeValidator::adjustCycleTimeOnClockAccuracy(
 
 }  // namespace timers
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

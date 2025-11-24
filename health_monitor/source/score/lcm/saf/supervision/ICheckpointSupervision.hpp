@@ -29,7 +29,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -127,7 +127,7 @@ protected:
 
     /// @brief The pointer is only stored for the identification of a checkpoint observer. It can be further used for
     /// accessing const members only.
-    using CheckpointIdentifier = const score::vrte::saf::ifappl::Checkpoint*;
+    using CheckpointIdentifier = const score::lcm::saf::ifappl::Checkpoint*;
 
     /// @brief Time sorted checkpoint snapshot
     struct CheckpointSnapshot final
@@ -197,7 +197,7 @@ private:
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

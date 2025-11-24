@@ -24,7 +24,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -194,5 +194,5 @@ void SwClusterHandler::performCyclicTriggers(const timers::NanoSecondType f_sync
 
 }  // namespace daemon
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

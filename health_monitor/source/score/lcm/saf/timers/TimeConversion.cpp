@@ -17,7 +17,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -74,5 +74,5 @@ double TimeConversion::convertNanoSecToMilliSec(const NanoSecondType f_timeValue
 
 }  // namespace timers
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

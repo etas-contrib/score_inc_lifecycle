@@ -20,7 +20,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -372,5 +372,5 @@ ifexm::ProcessCfg::ProcessExecutionError Local::getProcessExecutionError(void) c
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

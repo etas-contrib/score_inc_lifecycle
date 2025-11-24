@@ -26,7 +26,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -65,7 +65,7 @@ public:
 
     /// @brief The pointer is only stored for the identification of a process state. It can be further used for
     /// accessing const members only.
-    using ProcessStateIdentifier = const score::vrte::saf::ifexm::ProcessState*;
+    using ProcessStateIdentifier = const score::lcm::saf::ifexm::ProcessState*;
 
     /// @brief Time sorted process state snapshot
     struct ProcessStateSnapshot final
@@ -203,7 +203,7 @@ PHM_PRIVATE:
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

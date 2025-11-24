@@ -24,7 +24,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -35,7 +35,7 @@ namespace daemon
    true_no_defect) */
 /* RULECHECKER_comment(0, 4, check_incomplete_data_member_construction, "Default constructor is used for\
  processStateReader.", true_no_defect) */
-PhmDaemon::PhmDaemon(score::vrte::saf::timers::OsClockInterface& f_osClock, logging::PhmLogger& f_logger_r,
+PhmDaemon::PhmDaemon(score::lcm::saf::timers::OsClockInterface& f_osClock, logging::PhmLogger& f_logger_r,
                      std::unique_ptr<watchdog::IWatchdogIf> f_watchdog) :
     osClock{f_osClock}, cycleTimer{&osClock}, logger_r{f_logger_r}, swClusterHandlers{}, watchdog(std::move(f_watchdog))
 {
@@ -127,5 +127,5 @@ bool PhmDaemon::construct(const factory::MachineConfigFactory::SupervisionBuffer
 
 }  // namespace daemon
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

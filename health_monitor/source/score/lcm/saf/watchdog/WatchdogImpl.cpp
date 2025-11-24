@@ -24,7 +24,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -469,5 +469,5 @@ void WatchdogImpl::waitForever() const noexcept
 #endif
 }  // namespace watchdog
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

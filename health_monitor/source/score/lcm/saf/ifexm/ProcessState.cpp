@@ -15,7 +15,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -96,5 +96,5 @@ void ProcessState::pushData(void) noexcept
 
 }  // namespace ifexm
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

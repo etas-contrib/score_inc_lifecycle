@@ -21,7 +21,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -227,5 +227,5 @@ void MachineConfigFactory::logConfiguration() noexcept(true)
 
 }  // namespace factory
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

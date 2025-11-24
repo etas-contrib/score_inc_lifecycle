@@ -33,7 +33,7 @@
 #include "score/lcm/saf/watchdog/IWatchdogIf.hpp"
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -68,7 +68,7 @@ public:
     /// @param[in] f_watchdog watchdog implementation (dependency injection possible in tests)
     /* RULECHECKER_comment(3,1, check_expensive_to_copy_in_parameter, "Move only types cannot be passed by const ref",
        true_no_defect) */
-    PhmDaemon(score::vrte::saf::timers::OsClockInterface& f_osClock, logging::PhmLogger& f_logger_r,
+    PhmDaemon(score::lcm::saf::timers::OsClockInterface& f_osClock, logging::PhmLogger& f_logger_r,
               std::unique_ptr<watchdog::IWatchdogIf> f_watchdog);
 
     /* RULECHECKER_comment(0, 4, check_min_instructions, "Default destructor is not provided\
@@ -92,7 +92,7 @@ public:
     /// @return See EInitCode definition
     EInitCode init(int f_argc, char** f_argv) noexcept(false)
     {
-        score::vrte::saf::daemon::PhmDaemonCmdLineParser<> cmdLineParser{};
+        score::lcm::saf::daemon::PhmDaemonCmdLineParser<> cmdLineParser{};
         const int8_t parseResult{cmdLineParser.parseOptions(f_argc, f_argv)};
         if (parseResult != 0)
         {
@@ -106,7 +106,7 @@ public:
         }
         if (machineConfig.isHmShutdownEnabled())
         {
-            if (!score::vrte::saf::common::PhmSignalHandler::registerHandler())
+            if (!score::lcm::saf::common::PhmSignalHandler::registerHandler())
             {
                 return EInitCode::kSignalHandlerRegistrationFailed;
             }
@@ -119,7 +119,7 @@ public:
 
         int64_t cycleTimeModified{static_cast<std::int64_t>(machineConfig.getCycleTimeInNs())};
         cycleTimeModified =
-            score::vrte::saf::timers::CycleTimeValidator::adjustCycleTimeOnClockAccuracy(cycleTimeModified, osClock);
+            score::lcm::saf::timers::CycleTimeValidator::adjustCycleTimeOnClockAccuracy(cycleTimeModified, osClock);
 
         const int64_t timerInit{cycleTimer.init(cycleTimeModified)};
         if (timerInit > 0)
@@ -128,7 +128,7 @@ public:
                                << static_cast<uint64_t>(cycleTimeModified);
             logger_r.LogDebug() << "Phm Daemon: The accuracy of the monotonic system clock in [ns] is:"
                                 << static_cast<uint64_t>(
-                                       score::vrte::saf::timers::CycleTimeValidator::getMonotonicClockAccuracy(
+                                       score::lcm::saf::timers::CycleTimeValidator::getMonotonicClockAccuracy(
                                            osClock));
         }
         else
@@ -252,10 +252,10 @@ private:
     void performCyclicTriggers(void);
 
     /// @brief System clock interface to access the monotonic clock for sleep
-    score::vrte::saf::timers::OsClockInterface& osClock;
+    score::lcm::saf::timers::OsClockInterface& osClock;
 
     /// @brief For fixed time-step execution during the cyclic execution
-    score::vrte::saf::timers::CycleTimer cycleTimer;
+    score::lcm::saf::timers::CycleTimer cycleTimer;
 
     /// @brief Logging entity for warnings, errors used in init() phase and the cyclic() phase
     logging::PhmLogger& logger_r;
@@ -267,7 +267,7 @@ private:
     std::vector<SwClusterHandler> swClusterHandlers;
 
     /// @brief Process State Reader for PHM daemon
-    score::vrte::saf::ifexm::ProcessStateReader processStateReader;
+    score::lcm::saf::ifexm::ProcessStateReader processStateReader;
 
     /// @brief Connection to watchdog devices
     std::unique_ptr<watchdog::IWatchdogIf> watchdog;
@@ -275,7 +275,7 @@ private:
 
 }  // namespace daemon
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

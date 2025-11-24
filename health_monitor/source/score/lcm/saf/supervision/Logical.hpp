@@ -31,7 +31,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -362,7 +362,7 @@ PHM_PRIVATE:
     /// @brief Time sorting checkpoint buffer
     /// @details The buffer enables the logical supervision that checkpoint can be received
     /// from different Monitor interfaces in a given time frame e.g. two PHM Daemon cycles
-    score::vrte::saf::common::TimeSortingBuffer<TimeSortedUpdateEvent> timeSortingUpdateEventBuffer;
+    score::lcm::saf::common::TimeSortingBuffer<TimeSortedUpdateEvent> timeSortingUpdateEventBuffer;
 
     /// @brief Keeps track of all relevant processes
     ProcessStateTracker processTracker;
@@ -370,7 +370,7 @@ PHM_PRIVATE:
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

@@ -30,7 +30,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -218,7 +218,7 @@ PHM_PRIVATE:
     {
         /// @brief The time difference between the source and target checkpoints timestamps
         /// @note This may be left 0, if no target checkpoint was received
-        score::vrte::saf::timers::NanoSecondType sourceTargetDiffTime{0U};
+        score::lcm::saf::timers::NanoSecondType sourceTargetDiffTime{0U};
         /// @brief Flag is true in case target checkpoint was received, else false
         // cppcheck-suppress unusedStructMember
         bool targetCheckpointReceived{false};
@@ -253,7 +253,7 @@ PHM_PRIVATE:
     /// @brief Time sorting checkpoint buffer
     /// @details The buffer enables the deadline supervision that multiple source and target checkpoint can be received
     /// from different Monitor interfaces in a given time frame e.g. two PHM Daemon cycles
-    score::vrte::saf::common::TimeSortingBuffer<TimeSortedUpdateEvent> timeSortingUpdateEventBuffer;
+    score::lcm::saf::common::TimeSortingBuffer<TimeSortedUpdateEvent> timeSortingUpdateEventBuffer;
 
     /// @brief Keeps track of all relevant processes
     ProcessStateTracker processTracker;
@@ -261,7 +261,7 @@ PHM_PRIVATE:
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

@@ -19,7 +19,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -211,5 +211,5 @@ void MonitorIfDaemon::pushOverflowInfoToCheckpointObservers(void) const
 
 }  // namespace ifappl
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

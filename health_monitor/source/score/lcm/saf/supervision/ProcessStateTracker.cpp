@@ -16,7 +16,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -195,5 +195,5 @@ bool ProcessStateTracker::isActiveProcessGroup(const common::ProcessGroupId f_st
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

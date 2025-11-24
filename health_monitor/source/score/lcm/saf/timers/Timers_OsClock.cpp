@@ -23,7 +23,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -58,5 +58,5 @@ NanoSecondType OsClock::getMonotonicSystemClock(void) noexcept(true)
 
 }  // namespace timers
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

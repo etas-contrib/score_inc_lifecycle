@@ -32,7 +32,7 @@
 
 namespace xaap
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -50,7 +50,7 @@ using SupervisionErrorInfo = struct SupervisionErrorInfo
 }  // namespace supervision
 }  // namespace recovery
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace xaap
 
 namespace score
@@ -72,7 +72,7 @@ enum class TypeOfSupervision : std::uint32_t
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -144,7 +144,7 @@ public:
     ///                                    Management
     /// @note The process execution error is used only if this class was constructed with the configuration
     /// data for RecoveryNotification, otherwise it is ignored.
-    void send(const xaap::vrte::saf::recovery::supervision::SupervisionErrorInfo& f_executionErrorInfo_r);
+    void send(const xaap::lcm::saf::recovery::supervision::SupervisionErrorInfo& f_executionErrorInfo_r);
 
     /// @brief Send the notifications to State Management (if required), in every cycle of PHM daemon
     /// @note This is done by invoking the Recovery handler of State Management and verifying the feedback
@@ -213,7 +213,7 @@ public:
 
 }  // namespace recovery
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

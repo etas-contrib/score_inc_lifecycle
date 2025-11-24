@@ -38,7 +38,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -125,7 +125,7 @@ public:
 
     /// @brief Register the given recovery notification object
     /// @param [in] f_notification_r  Recovery notification object
-    void registerRecoveryNotification(score::vrte::saf::recovery::Notification& f_notification_r);
+    void registerRecoveryNotification(score::lcm::saf::recovery::Notification& f_notification_r);
 
 PHM_PRIVATE:
     /// @brief Local supervision instance identifier
@@ -143,7 +143,7 @@ PHM_PRIVATE:
         /// @brief The type of supervision that caused the local supervision state change
         ICheckpointSupervision::EType supervisionType{ICheckpointSupervision::EType::aliveSupervision};
         /// @brief Timestamp of the local supervision state change
-        score::vrte::saf::timers::NanoSecondType timestamp{0U};
+        score::lcm::saf::timers::NanoSecondType timestamp{0U};
         /// @brief The execution error from Local Supervision
         ifexm::ProcessCfg::ProcessExecutionError executionError{ifexm::ProcessCfg::kDefaultProcessExecutionError};
     };
@@ -154,7 +154,7 @@ PHM_PRIVATE:
         /// @brief The expiration tolerance that has been configured for the current PG state
         timers::NanoSecondType expiredTolerance{0U};
         /// @brief The timestamp of the PG state change
-        score::vrte::saf::timers::NanoSecondType timestamp{0U};
+        score::lcm::saf::timers::NanoSecondType timestamp{0U};
     };
 
     /// @brief Enumeration of reason for Stopped state in Global supervision
@@ -257,7 +257,7 @@ PHM_PRIVATE:
     std::map<LocalSupervisionId, score::lcm::LocalSupervisionStatus> localStatusOverTime{};
 
     /// @brief Vector of registered Recovery Notifications
-    std::vector<score::vrte::saf::recovery::Notification*> registeredRecoveryNotifications{};
+    std::vector<score::lcm::saf::recovery::Notification*> registeredRecoveryNotifications{};
 
     /// @brief Data loss event marker
     bool isDataLossEvent{false};
@@ -268,7 +268,7 @@ PHM_PRIVATE:
     /// @brief Time sorted local supervision state buffer
     /// @details The buffer allows to sort multiple local supervision state changes in correct order.
     /// This is required when e.g. a process restarts within one daemon cycle
-    score::vrte::saf::common::TimeSortingBuffer<TimeSortedElem> timeSortingLocalSupStateBuffer;
+    score::lcm::saf::common::TimeSortingBuffer<TimeSortedElem> timeSortingLocalSupStateBuffer;
 
     /// @brief Logger
     logging::PhmLogger& logger_r;
@@ -276,7 +276,7 @@ PHM_PRIVATE:
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

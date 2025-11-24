@@ -26,7 +26,7 @@ namespace score {
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -176,7 +176,7 @@ public:
 
 }  // namespace factory
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

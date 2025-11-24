@@ -28,7 +28,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -141,7 +141,7 @@ PHM_PRIVATE:
 
 }  // namespace ifexm
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

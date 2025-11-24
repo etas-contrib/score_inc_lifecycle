@@ -36,7 +36,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -55,7 +55,7 @@ struct CheckpointSupervisionEvent final
     /// supervision type
     ICheckpointSupervision::EType type{ICheckpointSupervision::EType::aliveSupervision};
     /// captured timestamp
-    score::vrte::saf::timers::NanoSecondType timestamp{0U};
+    score::lcm::saf::timers::NanoSecondType timestamp{0U};
     /// captured process execution error if supervision failed
     ifexm::ProcessCfg::ProcessExecutionError processExecutionError{ifexm::ProcessCfg::kDefaultProcessExecutionError};
 };
@@ -232,7 +232,7 @@ PHM_PRIVATE:
 
     /// @brief Time sorting checkpoint supervision event
     /// @details The buffer enables the local supervision to process checkpoint supervision events chronologically
-    score::vrte::saf::common::TimeSortingBuffer<CheckpointSupervisionEvent> timeSortingCheckpointSupEvent;
+    score::lcm::saf::common::TimeSortingBuffer<CheckpointSupervisionEvent> timeSortingCheckpointSupEvent;
 
     /// @brief The process execution error of the last supervision failure
     ifexm::ProcessCfg::ProcessExecutionError processExecutionError{ifexm::ProcessCfg::kDefaultProcessExecutionError};
@@ -240,7 +240,7 @@ PHM_PRIVATE:
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

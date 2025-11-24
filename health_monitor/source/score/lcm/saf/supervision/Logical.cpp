@@ -22,7 +22,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -429,5 +429,5 @@ bool Logical::isValidGraphTransition(const ifappl::Checkpoint& f_checkpoint_r) c
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score

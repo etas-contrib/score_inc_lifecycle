@@ -31,7 +31,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -230,7 +230,7 @@ PHM_PRIVATE:
     bool setReferenceCycleTimestamps(timers::NanoSecondType f_baseValue) noexcept(true);
 
     /// @brief Alive reference cycle in [nano seconds]
-    const score::vrte::saf::timers::NanoSecondType k_aliveReferenceCycle;
+    const score::lcm::saf::timers::NanoSecondType k_aliveReferenceCycle;
 
     /// @brief Minimum allowed alive indications
     const uint32_t k_minAliveIndications;
@@ -278,7 +278,7 @@ PHM_PRIVATE:
 
     /// @brief Time sorting buffer for update events in alive supervision
     /// @details This buffer sorts all process events and checkpoint events in the same buffer.
-    score::vrte::saf::common::TimeSortingBuffer<TimeSortedUpdateEvent> timeSortingUpdateEventBuffer;
+    score::lcm::saf::common::TimeSortingBuffer<TimeSortedUpdateEvent> timeSortingUpdateEventBuffer;
 
     /// @brief The process reporting alive indications
     const ifexm::ProcessState* aliveProcess;
@@ -289,7 +289,7 @@ PHM_PRIVATE:
 
 }  // namespace supervision
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

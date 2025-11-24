@@ -21,7 +21,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -35,7 +35,7 @@ public:
     /// @brief Get the monotonic clock accuracy in nanoseconds
     /// @param[in] f_clock_sys Interface to access the system clock functionality
     /// @return nanoseconds or -1 if receiving the clock resolution fails
-    static int64_t getMonotonicClockAccuracy(score::vrte::saf::timers::OsClockInterface const& f_clock_sys) noexcept(
+    static int64_t getMonotonicClockAccuracy(score::lcm::saf::timers::OsClockInterface const& f_clock_sys) noexcept(
         true);
 
     /// @brief Adjust a given time interval based on the clock accuracy of
@@ -48,12 +48,12 @@ public:
     /// - -1 if retrieving the system's clock resolution failed
     static int64_t adjustCycleTimeOnClockAccuracy(
         const int64_t f_requested_interval_ns,
-        const score::vrte::saf::timers::OsClockInterface& f_clock_sys) noexcept(true);
+        const score::lcm::saf::timers::OsClockInterface& f_clock_sys) noexcept(true);
 };
 
 }  // namespace timers
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif

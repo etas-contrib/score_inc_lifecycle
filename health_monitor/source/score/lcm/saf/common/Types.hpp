@@ -17,7 +17,7 @@
 
 namespace score
 {
-namespace vrte
+namespace lcm
 {
 namespace saf
 {
@@ -29,7 +29,7 @@ using ProcessId = std::size_t;
 
 }  // namespace common
 }  // namespace saf
-}  // namespace vrte
+}  // namespace lcm
 }  // namespace score
 
 #endif
