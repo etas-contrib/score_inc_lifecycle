@@ -83,9 +83,7 @@ class LaunchManagerConfGen:
                     for gid in machine["process_groups"][process_group]["processes"][
                         process
                     ]["supplementary_group_ids"]:
-                        json_config["Process"][-1]["sgids"].append(
-                            {"sgid": gid}
-                        )
+                        json_config["Process"][-1]["sgids"].append({"sgid": gid})
 
                     json_config["Process"][-1]["startupConfig"] = []
                     for startup_config in machine["process_groups"][process_group][
