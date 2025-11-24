@@ -18,7 +18,7 @@
 #include <cstring>
 #include <sstream>
 
-#include "etas/vrte/saf/timers/Timers_OsClock.hpp"
+#include "score/lcm/saf/timers/Timers_OsClock.hpp"
 #include "hm_flatcfg_generated.h"
 
 #include <fstream>

@@ -20,9 +20,9 @@
 #include <string>
 #include "score/lcm/MonitorImplWrapper.h"
 #include "score/lcm/Monitor.h"
-#include "etas/vrte/saf/ifappl/DataStructures.hpp"
-#include "etas/vrte/saf/ipc/IpcClient.hpp"
-#include "etas/vrte/saf/logging/PhmLogger.hpp"
+#include "score/lcm/saf/ifappl/DataStructures.hpp"
+#include "score/lcm/saf/ipc/IpcClient.hpp"
+#include "score/lcm/saf/logging/PhmLogger.hpp"
 
 namespace score
 {
