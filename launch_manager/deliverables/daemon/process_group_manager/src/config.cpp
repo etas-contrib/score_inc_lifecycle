@@ -15,9 +15,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 constexpr std::chrono::milliseconds kMaxQueueDelay(500);   ///< The maximum time to wait trying to add items to a queue
 constexpr std::chrono::milliseconds kGraphTimeout(10000);  ///< Timeout duration for graph operations.

@@ -32,9 +32,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 /// @brief ProcessGroupManager provides the core functionality of LCM.
 /// Software that is deployed to the machine, should be managed through Process Groups.

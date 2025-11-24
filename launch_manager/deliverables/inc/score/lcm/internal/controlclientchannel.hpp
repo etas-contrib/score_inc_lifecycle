@@ -23,9 +23,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 /// @brief This is initially some ID provided by the Control Client library. When received
 /// by Control Client handler additional information is added - the state manager

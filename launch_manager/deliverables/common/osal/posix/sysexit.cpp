@@ -15,9 +15,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 namespace osal {
 #if defined(__CTC__)

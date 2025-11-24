@@ -18,8 +18,8 @@
 #include <cstdint>
 
 namespace score {
-namespace internal {
 namespace lcm {
+namespace internal {
 namespace osal {
 // coverity[autosar_cpp14_m3_4_1_violation:INTENTIONAL] The value is used in a global context.
 constexpr uint32_t kDefaultNumCores = 32U;  // Default value if unable to determine number of cores

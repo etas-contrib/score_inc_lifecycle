@@ -16,9 +16,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 template <class T>
 WorkerThread<T>::WorkerThread(std::shared_ptr<JobQueue<T>> queue, uint32_t num_threads)

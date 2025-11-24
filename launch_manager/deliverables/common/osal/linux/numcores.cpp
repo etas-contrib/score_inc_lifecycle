@@ -16,8 +16,8 @@
 #include <score/lcm/internal/osal/osalnumcores.hpp>
 
 namespace score {
-namespace internal {
 namespace lcm {
+namespace internal {
 namespace osal {
 uint32_t getNumCores() {
     long res = sysconf(_SC_NPROCESSORS_ONLN);

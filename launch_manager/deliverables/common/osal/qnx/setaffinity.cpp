@@ -16,9 +16,9 @@
 #include <score/lcm/internal/osal/setaffinity.hpp>
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 namespace osal {
 

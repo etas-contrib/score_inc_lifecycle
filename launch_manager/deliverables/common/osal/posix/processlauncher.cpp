@@ -39,11 +39,11 @@ constexpr int kPosixSuccess = 0;
 
 namespace {
 
-using score::internal::lcm::osal::CommsType;
-using score::internal::lcm::osal::IpcCommsSync;
-using score::internal::lcm::osal::sysexit;
+using score::lcm::internal::osal::CommsType;
+using score::lcm::internal::osal::IpcCommsSync;
+using score::lcm::internal::osal::sysexit;
 
-void handleComms(score::internal::lcm::osal::ChildProcessConfig& param) {
+void handleComms(score::lcm::internal::osal::ChildProcessConfig& param) {
     if (param.shared_block) {
         param.fd = dup2(param.fd, param.shared_block->sync_fd);  // always make sure we are using fd=3
         param.shared_block->pid_ = getpid();                     // Store pid for check at client end
@@ -80,7 +80,7 @@ void handleComms(score::internal::lcm::osal::ChildProcessConfig& param) {
     }
 }
 
-void changeCurrentWorkingDirectory(const score::internal::lcm::osal::OsalConfig& config) {
+void changeCurrentWorkingDirectory(const score::lcm::internal::osal::OsalConfig& config) {
     // Change current working directory to the same as the executable
     constexpr size_t string_size = static_cast<size_t>(PATH_MAX);
     // Notice that this next static variable is duplicated by the fork() and so does not need
@@ -99,7 +99,7 @@ void changeCurrentWorkingDirectory(const score::internal::lcm::osal::OsalConfig&
     }
 }
 
-void implementMemoryResourceLimits(const score::internal::lcm::osal::OsalConfig& config) {
+void implementMemoryResourceLimits(const score::lcm::internal::osal::OsalConfig& config) {
     rlimit limit;
 
     if (config.resource_limits_.data_ != 0U) {
@@ -143,9 +143,9 @@ void implementMemoryResourceLimits(const score::internal::lcm::osal::OsalConfig&
     }
 }
 
-void changeSecurityPolicy(const score::internal::lcm::osal::OsalConfig& config) {
+void changeSecurityPolicy(const score::lcm::internal::osal::OsalConfig& config) {
     if (config.security_policy_ != "") {
-        if (score::internal::lcm::osal::setSecurityPolicy(config.security_policy_.c_str()) != 0) {
+        if (score::lcm::internal::osal::setSecurityPolicy(config.security_policy_.c_str()) != 0) {
             LM_LOG_ERROR() << "[New process] changeSecurityPolicy(" << config.security_policy_
                            << ") failed:" << strerror(errno);
             sysexit(EXIT_FAILURE);
@@ -157,9 +157,9 @@ void changeSecurityPolicy(const score::internal::lcm::osal::OsalConfig& config) 
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 namespace osal {
 
@@ -216,14 +216,14 @@ OsalReturnType IProcess::startProcess(ProcessID* pid, IpcCommsP* block, const Os
 
 inline bool IProcess::setupComms(IpcCommsP& block, int& fd, const OsalConfig& config) {
     bool comms_result = true;
-    char shm_name[static_cast<uint32_t>(score::internal::lcm::ProcessLimits::maxLocalBuffSize)];
+    char shm_name[static_cast<uint32_t>(score::lcm::internal::ProcessLimits::maxLocalBuffSize)];
     size_t length = sizeof(IpcCommsSync);
 
     if (CommsType::kControlClient == config.comms_type_) {
         length += sizeof(ControlClientChannel);
     }
 
-    static_cast<void>(snprintf(shm_name, static_cast<uint32_t>(score::internal::lcm::ProcessLimits::maxLocalBuffSize),
+    static_cast<void>(snprintf(shm_name, static_cast<uint32_t>(score::lcm::internal::ProcessLimits::maxLocalBuffSize),
                                "/ipc_shared_mem%u", shm_name_counter++));
 
     fd = shm_open(shm_name, O_CREAT | O_EXCL | O_RDWR, 0U);

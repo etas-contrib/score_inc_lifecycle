@@ -22,9 +22,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 /// @brief Delay duration between successive iterations of the OsHandler's main loop when no processes are terminating.
 /// This constant prevents the OsHandler from consuming excessive CPU resources by sleeping for a specified duration
@@ -87,7 +87,7 @@ class OsHandler final {
     osal::IProcess& process_interface_;
 
     /// @brief Thread object to manage execution of the run method.
-    std::thread os_handler_{&score::internal::lcm::OsHandler::run, this};
+    std::thread os_handler_{&score::lcm::internal::OsHandler::run, this};
 };
 
 }  // namespace lcm

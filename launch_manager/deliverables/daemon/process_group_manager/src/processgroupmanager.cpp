@@ -21,11 +21,11 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
 
-using namespace score::internal::lcm::osal;
+namespace internal {
+
+using namespace score::lcm::internal::osal;
 
 static std::atomic_bool em_cancelled{false};
 
@@ -118,9 +118,9 @@ inline bool ProcessGroupManager::initializeControlClientHandler() {
     // The name is removed from the file system after creation, memory
     // is mapped and a pointer stored, the FD is kept open.
     ControlClientChannel::nudgeControlClientHandler_ = nullptr;
-    char shm_name[static_cast<uint32_t>(score::internal::lcm::ProcessLimits::maxLocalBuffSize)];
+    char shm_name[static_cast<uint32_t>(score::lcm::internal::ProcessLimits::maxLocalBuffSize)];
 
-    static_cast<void>(snprintf(shm_name, static_cast<uint32_t>(score::internal::lcm::ProcessLimits::maxLocalBuffSize),
+    static_cast<void>(snprintf(shm_name, static_cast<uint32_t>(score::lcm::internal::ProcessLimits::maxLocalBuffSize),
                                "/_nudge~._.~me_"));  // random name
     int fd = shm_open(shm_name, O_CREAT | O_EXCL | O_RDWR, 0U);
 
@@ -164,7 +164,7 @@ inline bool ProcessGroupManager::initializeProcessGroups() {
                 uint32_t num_processes = configuration_manager_.getNumberOfOsProcesses(pg_name).value_or(0);
 
                 if (static_cast<uint64_t>(total_processes_) + num_processes <=
-                    static_cast<uint64_t>(score::internal::lcm::ProcessLimits::kMaxProcesses)) {
+                    static_cast<uint64_t>(score::lcm::internal::ProcessLimits::kMaxProcesses)) {
                     process_groups_.push_back(std::make_shared<Graph>(num_processes, this));
                     total_processes_ += num_processes;
                 } else {

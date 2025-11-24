@@ -21,9 +21,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 ///
 /// @brief ProcessStateNotifier implementation for handling the information about each Process current state.

@@ -33,9 +33,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 using IdentifierHash = score::lcm::
     IdentifierHash;  ///< Defines a type alias 'IdentifierHash' for the type 'score::lcm::IdentifierHash'. Type that represents an identity or identifier. Usually this is a path to a short name.

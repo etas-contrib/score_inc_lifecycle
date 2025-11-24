@@ -29,9 +29,9 @@
 #include "controlclientchannel.hpp"
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 class ProcessGroupManager;
 

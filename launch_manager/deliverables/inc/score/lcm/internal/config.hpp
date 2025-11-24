@@ -21,9 +21,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 // coverity[autosar_cpp14_a0_1_1_violation:INTENTIONAL] These are constants that are used globally.
 constexpr std::size_t kMaxArg = 20U;  ///< Maximum number of arguments

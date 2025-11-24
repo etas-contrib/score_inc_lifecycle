@@ -15,8 +15,8 @@
 #include <score/lcm/internal/process_state_notifier/processstatenotifier.hpp>
 
 namespace score {
-namespace internal {
 namespace lcm {
+namespace internal {
 
 ProcessStateNotifier::ProcessStateNotifier() noexcept {
 }

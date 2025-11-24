@@ -20,9 +20,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 void ControlClientChannel::initialize() {
     request_.empty_.store(true);

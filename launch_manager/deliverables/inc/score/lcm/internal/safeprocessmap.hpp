@@ -22,9 +22,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 /// @brief Struct representing data in a map item
 struct ProcessInfoData {

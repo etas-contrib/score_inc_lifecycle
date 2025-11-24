@@ -23,9 +23,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 /// @brief A thread-safe job queue for managing and distributing jobs to worker threads.
 /// The JobQueue class allows multiple threads to enqueue jobs, which are then executed

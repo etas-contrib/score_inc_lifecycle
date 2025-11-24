@@ -18,8 +18,8 @@
 #include <cstdlib>
 
 namespace score {
-namespace internal {
 namespace lcm {
+namespace internal {
 
 /// @brief LifecycleClientExt class
 class LifecycleClientExt {

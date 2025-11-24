@@ -15,9 +15,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 void OsHandler::run(void) {
     while (is_running_) {

@@ -18,7 +18,7 @@
 #include <score/lcm/internal/log.hpp>
 
 using namespace std;
-using namespace score::internal::lcm;
+using namespace score::lcm::internal;
 
 /// @brief Initializes the LCM daemon.
 /// This function initializes the LCM daemon by calling the initialize() method

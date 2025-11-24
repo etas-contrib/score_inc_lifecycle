@@ -25,9 +25,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 /// @brief Function to access global logging context, for Launch Manager.
 /// Launch Manager (LM) daemon, uses a single global logging context.
@@ -57,9 +57,9 @@ inline score::mw::log::Logger& _getLmLogger() noexcept {
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 enum class LogLevel
 {
@@ -258,10 +258,10 @@ inline Logger& _getLmLogger() noexcept {
 #endif  // LC_LOG_SCORE_MW_LOG
 
 // wrapper macros for Launch Manager
-#define LM_LOG_FATAL() (score::internal::lcm::_getLmLogger().LogFatal())
-#define LM_LOG_ERROR() (score::internal::lcm::_getLmLogger().LogError())
-#define LM_LOG_WARN() (score::internal::lcm::_getLmLogger().LogWarn())
-#define LM_LOG_INFO() (score::internal::lcm::_getLmLogger().LogInfo())
-#define LM_LOG_DEBUG() (score::internal::lcm::_getLmLogger().LogDebug())
+#define LM_LOG_FATAL() (score::lcm::internal::_getLmLogger().LogFatal())
+#define LM_LOG_ERROR() (score::lcm::internal::_getLmLogger().LogError())
+#define LM_LOG_WARN() (score::lcm::internal::_getLmLogger().LogWarn())
+#define LM_LOG_INFO() (score::lcm::internal::_getLmLogger().LogInfo())
+#define LM_LOG_DEBUG() (score::lcm::internal::_getLmLogger().LogDebug())
 
 #endif  // LCM_LOG_HPP_INCLUDED

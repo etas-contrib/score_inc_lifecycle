@@ -19,9 +19,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 void ProcessInfoNode::initNode(Graph* graph, uint32_t index) {
     if (graph) {
@@ -437,7 +437,7 @@ inline void ProcessInfoNode::handleForcedTermination() {
     while ((osal::OsalReturnType::kSuccess ==
             graph_->getProcessGroupManager()->getProcessInterface()->forceTermination(pid_)) &&
            (graph_->getState() == GraphState::kInTransition) &&
-           (terminator_.timedWait(score::internal::lcm::kMaxSigKillDelay) != osal::OsalReturnType::kSuccess)) {
+           (terminator_.timedWait(score::lcm::internal::kMaxSigKillDelay) != osal::OsalReturnType::kSuccess)) {
         LM_LOG_FATAL() << "Process" << process_index_ << "(" << config_->startup_config_.short_name_
                        << ") did not respond to SIGKILL!!";
     }

@@ -20,9 +20,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 /// @brief Forward declaration of the ProcessInfoNode class.
 class ProcessInfoNode;

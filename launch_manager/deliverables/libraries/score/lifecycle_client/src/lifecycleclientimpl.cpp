@@ -21,7 +21,7 @@
 #include <csignal>
 #include <cstring>
 
-using namespace score::internal::lcm::osal;
+using namespace score::lcm::internal::osal;
 
 namespace score
 {
@@ -111,7 +111,7 @@ namespace score
             // By posting on the reply_sync_ semaphore, LM confirms that it read and processed our kRunning report.
             auto checkReplySync = [&]()
             {
-                if (sync->reply_sync_.timedWait(score::internal::lcm::kMaxKRunningDelay) == OsalReturnType::kFail)
+                if (sync->reply_sync_.timedWait(score::lcm::internal::kMaxKRunningDelay) == OsalReturnType::kFail)
                 {
                     LM_LOG_ERROR() << "[Lifecycle Client] Launch Manager failed to acknowledge kRunning report.";
 

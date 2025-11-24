@@ -19,9 +19,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 SafeProcessMap::SafeProcessMap(uint32_t capacity) : items_(std::make_unique<ProcessTreeNode[]>(capacity)) {
     if (capacity) {

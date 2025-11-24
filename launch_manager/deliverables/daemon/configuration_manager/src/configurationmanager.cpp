@@ -29,7 +29,7 @@ namespace {
 /// @brief Retrieves the resource limits configuration from the given config
 ///        node.
 bool setResourceLimits(const LMFlatBuffer::ProcessStartupConfig& startup_config_node,
-                       score::internal::lcm::OsProcess& instance) {
+                       score::lcm::internal::OsProcess& instance) {
     // not supported currently
     instance.startup_config_.resource_limits_.stack_ = 0U;  // don't set the stack limit
     instance.startup_config_.resource_limits_.cpu_ = 0U;    // no limit for cpu time
@@ -66,9 +66,9 @@ std::unique_ptr<char[]> read_flatbuffer_file(const std::string& f_filename_r) {
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 const char* ConfigurationManager::PROCESS_RUNNING_STATE = "Running";
 const char* ConfigurationManager::PROCESS_TERMINATED_STATE = "Terminated";
@@ -195,7 +195,7 @@ bool ConfigurationManager::initialize() {
     LM_LOG_DEBUG() << "Loading LCM Configurations...";
 
     // Check or set the environment variable
-    if (checkOrSetFlatConfigEnvVar(score::internal::lcm::kEnvVarName, score::internal::lcm::kEnvVarDefaultValue)) {
+    if (checkOrSetFlatConfigEnvVar(score::lcm::internal::kEnvVarName, score::lcm::internal::kEnvVarDefaultValue)) {
         LM_LOG_DEBUG() << "ECUCFG_ENV_VAR_ROOTFOLDER set successfully";
         result = initializeSoftwareClusterConfigurations();
 
@@ -211,7 +211,7 @@ bool ConfigurationManager::initialize() {
 void ConfigurationManager::deinitialize() {
     for (auto& process_group : process_groups_) {
         for (auto& process : process_group.processes_) {
-            for (size_t i = 0U; i < score::internal::lcm::kArgvArraySize && process.startup_config_.argv_[i] != nullptr;
+            for (size_t i = 0U; i < score::lcm::internal::kArgvArraySize && process.startup_config_.argv_[i] != nullptr;
                  ++i) {
                 // RULECHECKER_comment(1, 1, check_pointer_qualifier_cast_const, "Remove const for standard library with char type arguments.", true);
                 free(const_cast<char*>(process.startup_config_.argv_[i]));
@@ -511,14 +511,14 @@ void ConfigurationManager::parseProcessArguments(
         size_t arg_count = static_cast<size_t>(process_arg_list->size());
 
         // Calculate the maximum number of arguments to process, considering the argv size limit
-        size_t max_args = std::min(arg_count, static_cast<size_t>(score::internal::lcm::kMaxArg));
+        size_t max_args = std::min(arg_count, static_cast<size_t>(score::lcm::internal::kMaxArg));
 
 
         // Check if the number of arguments exceeds the maximum allowed size and log a warning if it does
-        if (arg_count > static_cast<std::size_t>(score::internal::lcm::kMaxArg)) {
+        if (arg_count > static_cast<std::size_t>(score::lcm::internal::kMaxArg)) {
             LM_LOG_DEBUG() << "Number of process arguments exceeds maximum allowed size (kMaxArg ="
-                           << static_cast<size_t>(score::internal::lcm::kMaxArg) << "). Only the first"
-                           << static_cast<size_t>(score::internal::lcm::kMaxArg) << "arguments will be processed.";
+                           << static_cast<size_t>(score::lcm::internal::kMaxArg) << "). Only the first"
+                           << static_cast<size_t>(score::lcm::internal::kMaxArg) << "arguments will be processed.";
         }
 
         // Iterate through the process arguments and add them to the argv array
@@ -549,14 +549,14 @@ void ConfigurationManager::parseProcessEnvironmentVars(
         // LM_LOG_DEBUG() << "Number of process environment variables:" << env_count;
 
         // Calculate the maximum number of environment variables to process, considering the envp size limit
-        size_t max_env = std::min(env_count, static_cast<size_t>(score::internal::lcm::kMaxEnv));
+        size_t max_env = std::min(env_count, static_cast<size_t>(score::lcm::internal::kMaxEnv));
         // LM_LOG_DEBUG() << "Number of process environment variables to process:" << max_env;
 
         // Check if the number of environment variables exceeds the maximum allowed size and log a warning if it does
-        if (env_count > static_cast<std::size_t>(score::internal::lcm::kMaxEnv)) {
+        if (env_count > static_cast<std::size_t>(score::lcm::internal::kMaxEnv)) {
             LM_LOG_WARN() << "Number of process environment variables exceeds maximum allowed size (kMaxEnv ="
-                          << static_cast<size_t>(score::internal::lcm::kMaxEnv) << "). Only the first"
-                          << static_cast<size_t>(score::internal::lcm::kMaxEnv) << "variables will be processed.";
+                          << static_cast<size_t>(score::lcm::internal::kMaxEnv) << "). Only the first"
+                          << static_cast<size_t>(score::lcm::internal::kMaxEnv) << "variables will be processed.";
         }
 
         // Iterate through the process environment variables and add them to the envp array

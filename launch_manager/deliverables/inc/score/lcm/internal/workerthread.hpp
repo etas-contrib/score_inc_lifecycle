@@ -23,9 +23,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 /// @brief Templated worker thread pool for executing jobs from a queue.
 /// This class manages a pool of worker threads that continuously retrieve and execute jobs

@@ -21,9 +21,9 @@
 
 namespace score {
 
-namespace internal {
-
 namespace lcm {
+
+namespace internal {
 
 Graph::Graph(uint32_t max_num_nodes, ProcessGroupManager* pgm)
     : pg_index_(0U),
