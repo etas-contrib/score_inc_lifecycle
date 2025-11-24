@@ -38,9 +38,9 @@ namespace ifexm
 class ProcessStateReader
 {
 public:
-    using ExmProcessState = score::vrte::lcm::ProcessState;
-    using ExmPosixProcess = score::vrte::lcm::PosixProcess;
-    using ExmProcessStateClient = score::vrte::lcm::ProcessStateClient;
+    using ExmProcessState = score::lcm::ProcessState;
+    using ExmPosixProcess = score::lcm::PosixProcess;
+    using ExmProcessStateClient = score::lcm::ProcessStateClient;
 
     /// @brief Default Constructor
     ProcessStateReader();

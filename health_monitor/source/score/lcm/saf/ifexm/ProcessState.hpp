@@ -77,11 +77,11 @@ public:
     common::ProcessId getProcessId(void) const noexcept;
 
     /// @brief Enumeration of process states
-    enum class EProcState : uint8_t{idle = static_cast<uint8_t>(score::vrte::lcm::ProcessState::kIdle),
-                                    starting = static_cast<uint8_t>(score::vrte::lcm::ProcessState::kStarting),
-                                    running = static_cast<uint8_t>(score::vrte::lcm::ProcessState::kRunning),
-                                    sigterm = static_cast<uint8_t>(score::vrte::lcm::ProcessState::kTerminating),
-                                    off = static_cast<uint8_t>(score::vrte::lcm::ProcessState::kTerminated)};
+    enum class EProcState : uint8_t{idle = static_cast<uint8_t>(score::lcm::ProcessState::kIdle),
+                                    starting = static_cast<uint8_t>(score::lcm::ProcessState::kStarting),
+                                    running = static_cast<uint8_t>(score::lcm::ProcessState::kRunning),
+                                    sigterm = static_cast<uint8_t>(score::lcm::ProcessState::kTerminating),
+                                    off = static_cast<uint8_t>(score::lcm::ProcessState::kTerminated)};
 
     /// @brief Get Process State
     /// @return     Returns Process State

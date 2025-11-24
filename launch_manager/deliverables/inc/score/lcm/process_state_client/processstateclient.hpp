@@ -24,8 +24,6 @@
 
 namespace score {
 
-namespace vrte {
-
 namespace lcm {
 
 /// @brief ProcessStateClient implementation for handling the information about current state of each Process.
@@ -73,8 +71,6 @@ class ProcessStateClient final {
 };
 
 }  // namespace lcm
-
-}  // namespace vrte
 
 }  // namespace score
 

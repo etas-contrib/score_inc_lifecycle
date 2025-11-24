@@ -20,8 +20,6 @@
 
 namespace score {
 
-namespace vrte {
-
 namespace lcm {
 
 /// @brief Represents the state of a modelled process.
@@ -69,8 +67,6 @@ enum class PipcConstants : size_t {
 };
 
 }  // namespace lcm
-
-}  // namespace vrte
 
 }  // namespace score
 
