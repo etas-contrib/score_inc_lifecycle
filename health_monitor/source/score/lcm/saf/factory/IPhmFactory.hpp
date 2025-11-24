@@ -24,7 +24,7 @@ namespace score {
     }
 }
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -177,6 +177,6 @@ public:
 }  // namespace factory
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

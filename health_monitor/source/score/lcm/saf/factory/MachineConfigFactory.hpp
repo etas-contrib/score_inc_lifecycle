@@ -27,7 +27,7 @@ namespace HMCOREFlatBuffer
 struct HMCOREEcuCfg;
 }  // namespace PHMCOREFlatBuffer
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -146,6 +146,6 @@ private:
 }  // namespace factory
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

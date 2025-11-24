@@ -19,7 +19,7 @@
 
 #include "score/lcm/saf/watchdog/IDeviceConfigFactory.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -128,6 +128,6 @@ protected:
 }  // namespace watchdog
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

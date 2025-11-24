@@ -26,7 +26,7 @@
 #include <unistd.h>
 #include "ipc_dropin/socket.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -238,6 +238,6 @@ private:
 }  // namespace ipc
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

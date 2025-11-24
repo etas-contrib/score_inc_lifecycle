@@ -26,7 +26,7 @@
 
 #include "etas/vrte/lcm/process_state_client/posixprocess.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -142,6 +142,6 @@ PHM_PRIVATE:
 }  // namespace ifexm
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

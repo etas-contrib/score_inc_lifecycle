@@ -13,7 +13,7 @@
 
 #include "score/lcm/saf/ifappl/Checkpoint.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -80,4 +80,4 @@ const ifexm::ProcessState* Checkpoint::getProcess(void) const noexcept(true)
 }  // namespace ifappl
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

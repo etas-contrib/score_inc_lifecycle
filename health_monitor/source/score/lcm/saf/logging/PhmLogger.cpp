@@ -15,7 +15,7 @@
 
 #include "score/lcm/saf/logging/PhmLogger.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -110,4 +110,4 @@ Stream PhmLogger::LogVerbose() noexcept
 }  // namespace logging
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

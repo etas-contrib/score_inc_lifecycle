@@ -15,7 +15,7 @@
 
 #include <limits>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -75,4 +75,4 @@ double TimeConversion::convertNanoSecToMilliSec(const NanoSecondType f_timeValue
 }  // namespace timers
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

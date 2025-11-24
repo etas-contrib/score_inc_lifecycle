@@ -19,7 +19,7 @@
 #include "score/lcm/saf/recovery/Notification.hpp"
 #include "score/lcm/saf/supervision/Local.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -233,7 +233,7 @@ score::lcm::GlobalSupervisionStatus Global::getStatus(void) const noexcept
     return globalStatus;
 }
 
-void Global::registerRecoveryNotification(etas::vrte::saf::recovery::Notification& f_notification_r)
+void Global::registerRecoveryNotification(score::vrte::saf::recovery::Notification& f_notification_r)
 {
     // Register the Recovery Notification by adding a pointer to it in a vector
     registeredRecoveryNotifications.push_back(&f_notification_r);
@@ -562,4 +562,4 @@ bool Global::isDebounced(timers::NanoSecondType f_time) noexcept
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

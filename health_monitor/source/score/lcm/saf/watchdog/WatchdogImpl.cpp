@@ -22,7 +22,7 @@
 #include "score/lcm/saf/watchdog/DeviceIf.hpp"
 #include "score/lcm/saf/watchdog/Watchdog.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -470,4 +470,4 @@ void WatchdogImpl::waitForever() const noexcept
 }  // namespace watchdog
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

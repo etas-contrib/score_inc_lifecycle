@@ -14,7 +14,7 @@
 
 #include <algorithm>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -196,4 +196,4 @@ bool ProcessStateTracker::isActiveProcessGroup(const common::ProcessGroupId f_st
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

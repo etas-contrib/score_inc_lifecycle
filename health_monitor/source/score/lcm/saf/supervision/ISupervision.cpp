@@ -13,7 +13,7 @@
 
 #include "score/lcm/saf/supervision/ISupervision.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -36,4 +36,4 @@ const char* ISupervision::getConfigName(void) const
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

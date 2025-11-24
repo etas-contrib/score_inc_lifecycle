@@ -19,7 +19,7 @@
 #include "flatbuffers/flatbuffers.h"
 
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -228,4 +228,4 @@ void MachineConfigFactory::logConfiguration() noexcept(true)
 }  // namespace factory
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

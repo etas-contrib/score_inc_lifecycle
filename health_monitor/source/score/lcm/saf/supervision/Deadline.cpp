@@ -20,7 +20,7 @@
 #include "score/lcm/saf/ifexm/ProcessState.hpp"
 #include "score/lcm/saf/timers/TimeConversion.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -462,4 +462,4 @@ void Deadline::switchToExpired() noexcept
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

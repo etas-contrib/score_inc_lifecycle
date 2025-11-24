@@ -20,7 +20,7 @@
 
 #include <cassert>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -60,4 +60,4 @@ std::int32_t DeviceIf::close(std::int32_t f_fd) noexcept
 }  // namespace watchdog
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

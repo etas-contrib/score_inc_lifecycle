@@ -22,7 +22,7 @@
 #include "score/lcm/saf/supervision/Local.hpp"
 #include "score/lcm/saf/supervision/Logical.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -195,4 +195,4 @@ void SwClusterHandler::performCyclicTriggers(const timers::NanoSecondType f_sync
 }  // namespace daemon
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

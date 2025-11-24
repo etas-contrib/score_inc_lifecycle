@@ -21,7 +21,7 @@
 
 #include "TimeConversion.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -59,4 +59,4 @@ NanoSecondType OsClock::getMonotonicSystemClock(void) noexcept(true)
 }  // namespace timers
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

@@ -27,7 +27,7 @@
 #include "score/lcm/saf/supervision/SupervisionCfg.hpp"
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -127,7 +127,7 @@ protected:
 
     /// @brief The pointer is only stored for the identification of a checkpoint observer. It can be further used for
     /// accessing const members only.
-    using CheckpointIdentifier = const etas::vrte::saf::ifappl::Checkpoint*;
+    using CheckpointIdentifier = const score::vrte::saf::ifappl::Checkpoint*;
 
     /// @brief Time sorted checkpoint snapshot
     struct CheckpointSnapshot final
@@ -198,6 +198,6 @@ private:
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

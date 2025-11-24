@@ -17,7 +17,7 @@
 
 #include "score/lcm/saf/ifexm/ProcessState.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -212,4 +212,4 @@ void MonitorIfDaemon::pushOverflowInfoToCheckpointObservers(void) const
 }  // namespace ifappl
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

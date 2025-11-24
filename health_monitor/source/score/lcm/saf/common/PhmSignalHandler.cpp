@@ -17,7 +17,7 @@
 #include <iostream>
 #include <map>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -116,4 +116,4 @@ bool PhmSignalHandler::registerHandler(void) noexcept(true)
 }  // namespace common
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

@@ -17,7 +17,7 @@
 
 #include <cstdint>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -41,6 +41,6 @@ public:
 }  // namespace daemon
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

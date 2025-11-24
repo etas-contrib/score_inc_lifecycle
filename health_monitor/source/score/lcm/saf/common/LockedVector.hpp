@@ -16,7 +16,7 @@
 
 #include "score/lcm/saf/common/FixedSizeVector.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -124,6 +124,6 @@ public:
 }  // namespace common
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

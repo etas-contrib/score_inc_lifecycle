@@ -19,7 +19,7 @@
 #include "score/lcm/saf/ipc/IpcServer.hpp"
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -42,7 +42,7 @@ constexpr uint16_t k_maxCheckpointBufferElements{512U};
 required for Vector and IPC APIs", true_no_defect) */
 struct CheckpointBufferElement final
 {
-    etas::vrte::saf::timers::NanoSecondType timestamp{0U};  ///< Timestamp
+    score::vrte::saf::timers::NanoSecondType timestamp{0U};  ///< Timestamp
     uint32_t checkpointId{0U};                               ///< Checkpoint ID
 
     /// @brief Default constructor needed for storage in vector
@@ -51,7 +51,7 @@ struct CheckpointBufferElement final
     /// @brief Constructor for usage with emplace
     /// @param [in] f_timestamp The checkpoint timestamp
     /// @param [in] f_checkpointId  The checkpoint id
-    CheckpointBufferElement(etas::vrte::saf::timers::NanoSecondType f_timestamp,
+    CheckpointBufferElement(score::vrte::saf::timers::NanoSecondType f_timestamp,
                             uint32_t f_checkpointId) noexcept(true) :
         timestamp(f_timestamp), checkpointId(f_checkpointId)
     {
@@ -64,6 +64,6 @@ using CheckpointIpcServer = ipc::IpcServer<CheckpointBufferElement, k_maxCheckpo
 }  // namespace ifappl
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

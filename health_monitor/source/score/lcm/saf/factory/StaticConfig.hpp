@@ -20,7 +20,7 @@
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 #include "score/lcm/saf/watchdog/IDeviceConfigFactory.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -57,6 +57,6 @@ public:
 }  // namespace factory
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

@@ -13,7 +13,7 @@
 #include "CycleTimer.hpp"
 
 #include "score/lcm/saf/timers/TimeConversion.hpp"
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -25,7 +25,7 @@ namespace timers
 using constexpr enforces constant initialization by the compiler", false) */
 constexpr int CycleTimer::kDeadlineAlreadyOver;
 
-CycleTimer::CycleTimer(etas::vrte::saf::timers::OsClockInterface const* f_osInterface) noexcept :
+CycleTimer::CycleTimer(score::vrte::saf::timers::OsClockInterface const* f_osInterface) noexcept :
     osInterface{f_osInterface}, sleepIntervalNs{0}, deadline{}
 {
     static_cast<void>(0U);
@@ -101,4 +101,4 @@ void CycleTimer::handleNanoSecOverflow() noexcept(true)
 }  // namespace timers
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

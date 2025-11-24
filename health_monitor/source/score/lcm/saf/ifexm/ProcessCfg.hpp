@@ -20,7 +20,7 @@
 #include <vector>
 #include "score/lcm/saf/common/Types.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -66,6 +66,6 @@ public:
 }  // namespace ifexm
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

@@ -20,7 +20,7 @@
 #include <vector>
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -84,6 +84,6 @@ private:
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

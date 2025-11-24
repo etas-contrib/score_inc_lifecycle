@@ -13,7 +13,7 @@
 
 #include "score/lcm/saf/recovery/Notification.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -186,4 +186,4 @@ const std::string& Notification::getConfigName(void) const noexcept
 }  // namespace recovery
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

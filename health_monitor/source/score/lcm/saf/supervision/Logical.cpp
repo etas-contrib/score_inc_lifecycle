@@ -20,7 +20,7 @@
 #include "score/lcm/saf/ifexm/ProcessState.hpp"
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -430,4 +430,4 @@ bool Logical::isValidGraphTransition(const ifappl::Checkpoint& f_checkpoint_r) c
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

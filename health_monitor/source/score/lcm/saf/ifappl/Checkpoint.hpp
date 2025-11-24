@@ -22,7 +22,7 @@
 #include "score/lcm/saf/ifexm/ProcessState.hpp"
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -75,12 +75,12 @@ public:
 
     /// @brief Get timestamp
     /// @return NanoSecondType  Timestamp value of the reported checkpoint in [nano seconds]
-    etas::vrte::saf::timers::NanoSecondType getTimestamp(void) const noexcept(true);
+    score::vrte::saf::timers::NanoSecondType getTimestamp(void) const noexcept(true);
 
     /// @brief Push data to checkpoint observer
     /// @details Push the checkpoint timestamp to the checkpoint observer to notify it was reported
     /// @param [in] f_timestamp     Timestamp value captured when the checkpoint was reported in [nano seconds]
-    void pushData(const etas::vrte::saf::timers::NanoSecondType f_timestamp) noexcept(true);
+    void pushData(const score::vrte::saf::timers::NanoSecondType f_timestamp) noexcept(true);
 
     /// @brief Set data loss event
     /// @details Set data loss event in the checkpoint observer
@@ -113,12 +113,12 @@ private:
     bool isDataLossEvent;
 
     /// @brief Timestamp value in [nano seconds]
-    etas::vrte::saf::timers::NanoSecondType timestamp;
+    score::vrte::saf::timers::NanoSecondType timestamp;
 };
 
 }  // namespace ifappl
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

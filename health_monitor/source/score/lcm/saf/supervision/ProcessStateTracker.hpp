@@ -24,7 +24,7 @@
 #include "score/lcm/saf/logging/PhmLogger.hpp"
 #define ENABLE_DBG 0
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -65,7 +65,7 @@ public:
 
     /// @brief The pointer is only stored for the identification of a process state. It can be further used for
     /// accessing const members only.
-    using ProcessStateIdentifier = const etas::vrte::saf::ifexm::ProcessState*;
+    using ProcessStateIdentifier = const score::vrte::saf::ifexm::ProcessState*;
 
     /// @brief Time sorted process state snapshot
     struct ProcessStateSnapshot final
@@ -204,6 +204,6 @@ PHM_PRIVATE:
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

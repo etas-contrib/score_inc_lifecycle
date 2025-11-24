@@ -13,7 +13,7 @@
 
 #include "score/lcm/saf/ifexm/ProcessState.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -97,4 +97,4 @@ void ProcessState::pushData(void) noexcept
 }  // namespace ifexm
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

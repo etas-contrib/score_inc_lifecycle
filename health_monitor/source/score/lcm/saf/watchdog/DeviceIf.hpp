@@ -18,7 +18,7 @@
 #include <cstdint>
 #include <cstdlib>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -72,6 +72,6 @@ public:
 }  // namespace watchdog
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

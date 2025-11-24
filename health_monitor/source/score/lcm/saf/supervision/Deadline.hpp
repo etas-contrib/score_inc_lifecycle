@@ -28,7 +28,7 @@
 #include "score/lcm/saf/supervision/SupervisionCfg.hpp"
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -218,7 +218,7 @@ PHM_PRIVATE:
     {
         /// @brief The time difference between the source and target checkpoints timestamps
         /// @note This may be left 0, if no target checkpoint was received
-        etas::vrte::saf::timers::NanoSecondType sourceTargetDiffTime{0U};
+        score::vrte::saf::timers::NanoSecondType sourceTargetDiffTime{0U};
         /// @brief Flag is true in case target checkpoint was received, else false
         // cppcheck-suppress unusedStructMember
         bool targetCheckpointReceived{false};
@@ -253,7 +253,7 @@ PHM_PRIVATE:
     /// @brief Time sorting checkpoint buffer
     /// @details The buffer enables the deadline supervision that multiple source and target checkpoint can be received
     /// from different Monitor interfaces in a given time frame e.g. two PHM Daemon cycles
-    etas::vrte::saf::common::TimeSortingBuffer<TimeSortedUpdateEvent> timeSortingUpdateEventBuffer;
+    score::vrte::saf::common::TimeSortingBuffer<TimeSortedUpdateEvent> timeSortingUpdateEventBuffer;
 
     /// @brief Keeps track of all relevant processes
     ProcessStateTracker processTracker;
@@ -262,6 +262,6 @@ PHM_PRIVATE:
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

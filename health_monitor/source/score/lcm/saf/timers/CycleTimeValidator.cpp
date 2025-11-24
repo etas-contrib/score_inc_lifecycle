@@ -12,7 +12,7 @@
 ********************************************************************************/
 #include "CycleTimeValidator.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -22,7 +22,7 @@ namespace timers
 {
 
 int64_t CycleTimeValidator::getMonotonicClockAccuracy(
-    etas::vrte::saf::timers::OsClockInterface const& f_clock_sys) noexcept(true)
+    score::vrte::saf::timers::OsClockInterface const& f_clock_sys) noexcept(true)
 {
     struct timespec clockResolution
     {
@@ -39,11 +39,11 @@ int64_t CycleTimeValidator::getMonotonicClockAccuracy(
 }
 
 int64_t CycleTimeValidator::adjustCycleTimeOnClockAccuracy(
-    const int64_t f_requested_interval_ns, const etas::vrte::saf::timers::OsClockInterface& f_clock_sys) noexcept(true)
+    const int64_t f_requested_interval_ns, const score::vrte::saf::timers::OsClockInterface& f_clock_sys) noexcept(true)
 {
     int64_t intervalNs{-1};  // start with an invalid value
 
-    const int64_t accuracyNs{etas::vrte::saf::timers::CycleTimeValidator::getMonotonicClockAccuracy(f_clock_sys)};
+    const int64_t accuracyNs{score::vrte::saf::timers::CycleTimeValidator::getMonotonicClockAccuracy(f_clock_sys)};
 
     if (0 < accuracyNs)
     {
@@ -63,4 +63,4 @@ int64_t CycleTimeValidator::adjustCycleTimeOnClockAccuracy(
 }  // namespace timers
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

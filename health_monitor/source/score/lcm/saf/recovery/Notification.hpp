@@ -70,7 +70,7 @@ enum class TypeOfSupervision : std::uint32_t
 }  // namespace lcm
 }  // namespace score
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -214,6 +214,6 @@ public:
 }  // namespace recovery
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

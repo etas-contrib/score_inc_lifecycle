@@ -29,7 +29,7 @@
 #include "score/lcm/saf/supervision/ProcessStateTracker.hpp"
 #include "score/lcm/saf/supervision/SupervisionCfg.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -362,7 +362,7 @@ PHM_PRIVATE:
     /// @brief Time sorting checkpoint buffer
     /// @details The buffer enables the logical supervision that checkpoint can be received
     /// from different Monitor interfaces in a given time frame e.g. two PHM Daemon cycles
-    etas::vrte::saf::common::TimeSortingBuffer<TimeSortedUpdateEvent> timeSortingUpdateEventBuffer;
+    score::vrte::saf::common::TimeSortingBuffer<TimeSortedUpdateEvent> timeSortingUpdateEventBuffer;
 
     /// @brief Keeps track of all relevant processes
     ProcessStateTracker processTracker;
@@ -371,6 +371,6 @@ PHM_PRIVATE:
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

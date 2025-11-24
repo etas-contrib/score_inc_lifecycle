@@ -15,7 +15,7 @@
 
 #include <cassert>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -125,4 +125,4 @@ void ICheckpointSupervision::setProcessExecutionErrorForProcess(
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

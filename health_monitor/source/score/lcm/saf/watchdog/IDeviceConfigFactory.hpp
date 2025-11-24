@@ -21,7 +21,7 @@
 #include <string>
 #include <vector>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -89,6 +89,6 @@ protected:
 }  // namespace watchdog
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

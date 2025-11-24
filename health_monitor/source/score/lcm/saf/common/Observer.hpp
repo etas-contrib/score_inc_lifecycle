@@ -19,7 +19,7 @@
 
 #include <vector>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -133,6 +133,6 @@ private:
 }  // namespace common
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

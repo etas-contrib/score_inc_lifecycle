@@ -19,7 +19,7 @@
 #include "score/lcm/saf/ifexm/ProcessState.hpp"
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -53,7 +53,7 @@ Alive::Alive(const AliveSupervisionCfg& f_aliveCfg_r) :
 }
 
 // coverity[exn_spec_violation:FALSE] std::length_error is not thrown from push() which uses fixed-size-vector
-void Alive::updateData(const etas::vrte::saf::ifappl::Checkpoint& f_observable_r) noexcept(true)
+void Alive::updateData(const score::vrte::saf::ifappl::Checkpoint& f_observable_r) noexcept(true)
 {
     timers::NanoSecondType timestamp{f_observable_r.getTimestamp()};
 
@@ -571,4 +571,4 @@ void Alive::logExpiredFailedStateDetails() const noexcept(true)
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

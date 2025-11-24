@@ -23,7 +23,7 @@
 #include "score/lcm/saf/watchdog/IDeviceConfigFactory.hpp"
 #include "score/lcm/saf/watchdog/IWatchdogIf.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -198,6 +198,6 @@ private:
 }  // namespace watchdog
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

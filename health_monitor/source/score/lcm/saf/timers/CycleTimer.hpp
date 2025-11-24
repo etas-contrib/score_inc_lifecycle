@@ -22,7 +22,7 @@
 #include "score/lcm/saf/timers/OsClockInterface.hpp"
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -48,7 +48,7 @@ public:
     /// @brief Sets the interface for performing the OS clock system calls.
     /// @param[in] f_osInterface OS clock interface to access clock_nanosleep() and clock_gettime() via
     /// OsClockInterface. The pointer allows the interface exchange to enhance testability.
-    explicit CycleTimer(etas::vrte::saf::timers::OsClockInterface const* f_osInterface) noexcept;
+    explicit CycleTimer(score::vrte::saf::timers::OsClockInterface const* f_osInterface) noexcept;
 
     /// @brief Initialize the time interval object and check for internal errors, which prevent from incorrect
     /// execution.
@@ -131,7 +131,7 @@ private:
     void handleNanoSecOverflow() noexcept;
 
     /// @brief Interface to perform system calls such as clock_nanosleep()
-    const etas::vrte::saf::timers::OsClockInterface* osInterface;
+    const score::vrte::saf::timers::OsClockInterface* osInterface;
 
     /// @brief Cycle time interval value in nanoseconds
     ///
@@ -147,6 +147,6 @@ private:
 }  // namespace timers
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

@@ -25,7 +25,7 @@
 #include "score/lcm/saf/recovery/Notification.hpp"
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -163,6 +163,6 @@ private:
 }  // namespace daemon
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

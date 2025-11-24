@@ -17,7 +17,7 @@
 
 #include <chrono>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -114,6 +114,6 @@ private:
 }  // namespace timers
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

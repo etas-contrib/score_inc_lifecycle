@@ -29,7 +29,7 @@
 #endif
 
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -294,6 +294,6 @@ private:
 }  // namespace logging
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

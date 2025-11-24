@@ -48,36 +48,36 @@ int main(int argc, char** argv)
     // Overall try-catch block for exception handling
     try
     {
-        if (!etas::vrte::saf::common::PhmSignalHandler::ignoreTerminationSignals())
+        if (!score::vrte::saf::common::PhmSignalHandler::ignoreTerminationSignals())
         {
             return EXIT_FAILURE;
         }
 
-        etas::vrte::saf::timers::OsClockInterface osClock{};
+        score::vrte::saf::timers::OsClockInterface osClock{};
         osClock.startMeasurement();
 
-        etas::vrte::saf::logging::PhmLogger& logger_r{
-            etas::vrte::saf::logging::PhmLogger::getLogger(etas::vrte::saf::logging::PhmLogger::EContext::factory)};
+        score::vrte::saf::logging::PhmLogger& logger_r{
+            score::vrte::saf::logging::PhmLogger::getLogger(score::vrte::saf::logging::PhmLogger::EContext::factory)};
 
-        std::unique_ptr<etas::vrte::saf::watchdog::IWatchdogIf> watchdog{};
-        watchdog = std::make_unique<etas::vrte::saf::watchdog::WatchdogImpl>();
-        etas::vrte::saf::daemon::PhmDaemon daemon{osClock, logger_r, std::move(watchdog)};
+        std::unique_ptr<score::vrte::saf::watchdog::IWatchdogIf> watchdog{};
+        watchdog = std::make_unique<score::vrte::saf::watchdog::WatchdogImpl>();
+        score::vrte::saf::daemon::PhmDaemon daemon{osClock, logger_r, std::move(watchdog)};
 
         // coverity[autosar_cpp14_a15_5_2_violation] This warning comes from pipc-sa(external library)
-        const etas::vrte::saf::daemon::PhmDaemon::EInitCode initResult{daemon.init(argc, argv)};
+        const score::vrte::saf::daemon::PhmDaemon::EInitCode initResult{daemon.init(argc, argv)};
 
-        if (etas::vrte::saf::daemon::PhmDaemon::EInitCode::kNoError == initResult)
+        if (score::vrte::saf::daemon::PhmDaemon::EInitCode::kNoError == initResult)
         {
             const long ms{osClock.endMeasurement()};
             logger_r.LogDebug() << "Phm Daemon: Initialization took " << ms << " ms";
             score::lcm::LifecycleClient client{};
 
 #ifdef BINARY_TEST_ENABLE_PHM_DAEMON_HEAP_MEASUREMENT
-            etas::vrte::heap::Tracer::Enable();
+            score::vrte::heap::Tracer::Enable();
 #endif
 
             const bool isRunning{
-                daemon.startCyclicExec(client, etas::vrte::saf::common::PhmSignalHandler::receivedTerminationSignal)};
+                daemon.startCyclicExec(client, score::vrte::saf::common::PhmSignalHandler::receivedTerminationSignal)};
 
             if (!isRunning)
             {
@@ -85,7 +85,7 @@ int main(int argc, char** argv)
                 returnValue = EXIT_FAILURE;
             }
         }
-        else if (etas::vrte::saf::daemon::PhmDaemon::EInitCode::kPrintHelpOrVersion == initResult)
+        else if (score::vrte::saf::daemon::PhmDaemon::EInitCode::kPrintHelpOrVersion == initResult)
         {
             logger_r.LogInfo() << "Phm Daemon: will exit.";
         }

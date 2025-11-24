@@ -15,7 +15,7 @@
 
 #include "score/lcm/saf/timers/TimeConversion.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -190,4 +190,4 @@ constexpr ProcessState::EProcState ProcessStateReader::translateProcessState(
 }  // namespace ifexm
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

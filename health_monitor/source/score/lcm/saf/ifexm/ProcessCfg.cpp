@@ -13,7 +13,7 @@
 
 #include "score/lcm/saf/ifexm/ProcessCfg.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -27,4 +27,4 @@ constexpr ProcessCfg::ProcessExecutionError ProcessCfg::kDefaultProcessExecution
 }  // namespace ifexm
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

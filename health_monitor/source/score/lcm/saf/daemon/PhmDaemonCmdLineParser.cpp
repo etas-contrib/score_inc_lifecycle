@@ -13,7 +13,7 @@
 
 #include "score/lcm/saf/daemon/PhmDaemonCmdLineParser.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -27,4 +27,4 @@ namespace daemon
 }  // namespace daemon
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

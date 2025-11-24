@@ -22,7 +22,7 @@
 
 #include "score/lcm/saf/daemon/PhmDaemonConfig.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -141,6 +141,6 @@ private:
 }  // namespace daemon
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

@@ -20,7 +20,7 @@
 #include "score/lcm/saf/ipc/IpcBase.hpp"
 #include "ipc_dropin/socket.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -101,6 +101,6 @@ public:
 }  // namespace ipc
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

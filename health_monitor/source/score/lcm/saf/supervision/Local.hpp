@@ -34,7 +34,7 @@
 #include "score/lcm/saf/supervision/Logical.hpp"
 #include "score/lcm/saf/supervision/SupervisionCfg.hpp"
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -55,7 +55,7 @@ struct CheckpointSupervisionEvent final
     /// supervision type
     ICheckpointSupervision::EType type{ICheckpointSupervision::EType::aliveSupervision};
     /// captured timestamp
-    etas::vrte::saf::timers::NanoSecondType timestamp{0U};
+    score::vrte::saf::timers::NanoSecondType timestamp{0U};
     /// captured process execution error if supervision failed
     ifexm::ProcessCfg::ProcessExecutionError processExecutionError{ifexm::ProcessCfg::kDefaultProcessExecutionError};
 };
@@ -232,7 +232,7 @@ PHM_PRIVATE:
 
     /// @brief Time sorting checkpoint supervision event
     /// @details The buffer enables the local supervision to process checkpoint supervision events chronologically
-    etas::vrte::saf::common::TimeSortingBuffer<CheckpointSupervisionEvent> timeSortingCheckpointSupEvent;
+    score::vrte::saf::common::TimeSortingBuffer<CheckpointSupervisionEvent> timeSortingCheckpointSupEvent;
 
     /// @brief The process execution error of the last supervision failure
     ifexm::ProcessCfg::ProcessExecutionError processExecutionError{ifexm::ProcessCfg::kDefaultProcessExecutionError};
@@ -241,6 +241,6 @@ PHM_PRIVATE:
 }  // namespace supervision
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

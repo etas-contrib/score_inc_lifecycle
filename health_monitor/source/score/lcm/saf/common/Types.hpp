@@ -15,7 +15,7 @@
 
 #include <cstdint>
 
-namespace etas
+namespace score
 {
 namespace vrte
 {
@@ -30,6 +30,6 @@ using ProcessId = std::size_t;
 }  // namespace common
 }  // namespace saf
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif
