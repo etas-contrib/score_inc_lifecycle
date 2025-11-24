@@ -19,7 +19,7 @@
 #include "score/result/result.h"
 #include <score/lcm/exec_error_domain.h>
 
-#include <score/vrte/lcm/process_state_client/posixprocess.hpp>
+#include <score/lcm/process_state_client/posixprocess.hpp>
 #include "ipc_dropin/socket.hpp"
 
 namespace score {

@@ -27,7 +27,7 @@
 #include <score/vrte/lcm/config.hpp>
 #include <score/vrte/lcm/process_group_state_id.hpp>
 #include <score/vrte/lcm/osal/iprocess.hpp>
-#include <score/vrte/lcm/process_state_client/posixprocess.hpp>
+#include <score/lcm/process_state_client/posixprocess.hpp>
 
 #include "lm_flatcfg_generated.h"
 

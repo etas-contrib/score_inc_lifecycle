@@ -20,8 +20,8 @@
 #include "score/lcm/saf/ifexm/ProcessState.hpp"
 #include "score/lcm/saf/logging/PhmLogger.hpp"
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
-#include "etas/vrte/lcm/process_state_client/posixprocess.hpp"
-#include "etas/vrte/lcm/process_state_client/processstateclient.hpp"
+#include "score/lcm/process_state_client/posixprocess.hpp"
+#include "score/lcm/process_state_client/processstateclient.hpp"
 
 namespace score
 {
@@ -38,9 +38,9 @@ namespace ifexm
 class ProcessStateReader
 {
 public:
-    using ExmProcessState = etas::vrte::lcm::ProcessState;
-    using ExmPosixProcess = etas::vrte::lcm::PosixProcess;
-    using ExmProcessStateClient = etas::vrte::lcm::ProcessStateClient;
+    using ExmProcessState = score::vrte::lcm::ProcessState;
+    using ExmPosixProcess = score::vrte::lcm::PosixProcess;
+    using ExmProcessStateClient = score::vrte::lcm::ProcessStateClient;
 
     /// @brief Default Constructor
     ProcessStateReader();

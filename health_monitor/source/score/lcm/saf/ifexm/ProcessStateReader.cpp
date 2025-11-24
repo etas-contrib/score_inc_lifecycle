@@ -170,19 +170,19 @@ constexpr ProcessState::EProcState ProcessStateReader::translateProcessState(
 {
     // Following static assertion ensures consistency of process states in EXM and PHM
     static_assert(static_cast<uint8_t>(ProcessState::EProcState::idle) ==
-                      static_cast<uint8_t>(etas::vrte::lcm::ProcessState::kIdle),
+                      static_cast<uint8_t>(score::vrte::lcm::ProcessState::kIdle),
                   "EXM State Enum and ProcessState::EProcState Enum do not match.");
     static_assert(static_cast<uint8_t>(ProcessState::EProcState::starting) ==
-                      static_cast<uint8_t>(etas::vrte::lcm::ProcessState::kStarting),
+                      static_cast<uint8_t>(score::vrte::lcm::ProcessState::kStarting),
                   "EXM State Enum and ProcessState::EProcState Enum do not match.");
     static_assert(static_cast<uint8_t>(ProcessState::EProcState::running) ==
-                      static_cast<uint8_t>(etas::vrte::lcm::ProcessState::kRunning),
+                      static_cast<uint8_t>(score::vrte::lcm::ProcessState::kRunning),
                   "EXM State Enum and ProcessState::EProcState Enum do not match.");
     static_assert(static_cast<uint8_t>(ProcessState::EProcState::sigterm) ==
-                      static_cast<uint8_t>(etas::vrte::lcm::ProcessState::kTerminating),
+                      static_cast<uint8_t>(score::vrte::lcm::ProcessState::kTerminating),
                   "EXM State Enum and ProcessState::EProcState Enum do not match.");
     static_assert(static_cast<uint8_t>(ProcessState::EProcState::off) ==
-                      static_cast<uint8_t>(etas::vrte::lcm::ProcessState::kTerminated),
+                      static_cast<uint8_t>(score::vrte::lcm::ProcessState::kTerminated),
                   "EXM State Enum and ProcessState::EProcState Enum do not match.");
     return static_cast<ProcessState::EProcState>(f_processStateExm);
 }

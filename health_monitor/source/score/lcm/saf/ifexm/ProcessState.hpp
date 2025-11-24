@@ -24,7 +24,7 @@
 #include "score/lcm/saf/ifexm/ProcessCfg.hpp"
 #include "score/lcm/saf/timers/Timers_OsClock.hpp"
 
-#include "etas/vrte/lcm/process_state_client/posixprocess.hpp"
+#include "score/lcm/process_state_client/posixprocess.hpp"
 
 namespace score
 {
@@ -77,11 +77,11 @@ public:
     common::ProcessId getProcessId(void) const noexcept;
 
     /// @brief Enumeration of process states
-    enum class EProcState : uint8_t{idle = static_cast<uint8_t>(etas::vrte::lcm::ProcessState::kIdle),
-                                    starting = static_cast<uint8_t>(etas::vrte::lcm::ProcessState::kStarting),
-                                    running = static_cast<uint8_t>(etas::vrte::lcm::ProcessState::kRunning),
-                                    sigterm = static_cast<uint8_t>(etas::vrte::lcm::ProcessState::kTerminating),
-                                    off = static_cast<uint8_t>(etas::vrte::lcm::ProcessState::kTerminated)};
+    enum class EProcState : uint8_t{idle = static_cast<uint8_t>(score::vrte::lcm::ProcessState::kIdle),
+                                    starting = static_cast<uint8_t>(score::vrte::lcm::ProcessState::kStarting),
+                                    running = static_cast<uint8_t>(score::vrte::lcm::ProcessState::kRunning),
+                                    sigterm = static_cast<uint8_t>(score::vrte::lcm::ProcessState::kTerminating),
+                                    off = static_cast<uint8_t>(score::vrte::lcm::ProcessState::kTerminated)};
 
     /// @brief Get Process State
     /// @return     Returns Process State

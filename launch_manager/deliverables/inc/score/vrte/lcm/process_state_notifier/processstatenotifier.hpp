@@ -16,7 +16,7 @@
 #define PROCESSSTATE_NOTIFIER_HPP_INCLUDED
 
 #include <score/vrte/lcm/config.hpp>
-#include <score/vrte/lcm/process_state_client/posixprocess.hpp>
+#include <score/lcm/process_state_client/posixprocess.hpp>
 #include "ipc_dropin/socket.hpp"
 
 namespace score {
