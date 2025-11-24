@@ -22,7 +22,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -180,7 +180,7 @@ class SafeProcessMap final {
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score
 

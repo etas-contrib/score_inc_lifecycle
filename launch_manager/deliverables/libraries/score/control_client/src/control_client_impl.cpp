@@ -30,19 +30,19 @@
 // setting the mapping for both ControlClientCode and ExecErrc codes for error handling
 // This approach is used to avoid using switch-case statements
 // RULECHECKER_comment(1, 2, check_static_object_dynamic_initialization, "Map doesn't rely on any other static so this is fine", false)
-static std::map<score::vrte::lcm::ControlClientCode, score::lcm::ExecErrc> scErrorMap =
+static std::map<score::internal::lcm::ControlClientCode, score::lcm::ExecErrc> scErrorMap =
 {
-    { score::vrte::lcm::ControlClientCode::kSetStateInvalidArguments,
+    { score::internal::lcm::ControlClientCode::kSetStateInvalidArguments,
       score::lcm::ExecErrc::kInvalidArguments },
-    { score::vrte::lcm::ControlClientCode::kSetStateCancelled,
+    { score::internal::lcm::ControlClientCode::kSetStateCancelled,
       score::lcm::ExecErrc::kCancelled },
-    { score::vrte::lcm::ControlClientCode::kSetStateFailed,
+    { score::internal::lcm::ControlClientCode::kSetStateFailed,
       score::lcm::ExecErrc::kFailed },
-    { score::vrte::lcm::ControlClientCode::kSetStateAlreadyInState,
+    { score::internal::lcm::ControlClientCode::kSetStateAlreadyInState,
       score::lcm::ExecErrc::kAlreadyInState },
-    { score::vrte::lcm::ControlClientCode::kSetStateTransitionToSameState,
+    { score::internal::lcm::ControlClientCode::kSetStateTransitionToSameState,
       score::lcm::ExecErrc::kInTransitionToSameState },
-    { score::vrte::lcm::ControlClientCode::kFailedUnexpectedTerminationOnEnter,
+    { score::internal::lcm::ControlClientCode::kFailedUnexpectedTerminationOnEnter,
       score::lcm::ExecErrc::kFailedUnexpectedTerminationOnEnter }
 };
 
@@ -88,7 +88,7 @@ ControlClientImpl::ControlClientImpl(std::function<void(const score::lcm::Execut
         control_client_requests_[i].initial_machine_state_transition_request_ = false;
     }
 
-    ipc_channel_ = score::vrte::lcm::ControlClientChannel::initializeControlClientChannel();
+    ipc_channel_ = score::internal::lcm::ControlClientChannel::initializeControlClientChannel();
 
     ipc_request_semaphore_.init(1U, false);
     ipc_response_thread_ = std::make_unique<std::thread>(&ControlClientImpl::run, this);
@@ -108,7 +108,7 @@ ControlClientImpl::~ControlClientImpl() noexcept {
 
 void ControlClientImpl::run() {
     // creating a instance called msg for ControlClientMessage that will handle all the communication between LCM and ControlClientImpl
-    score::vrte::lcm::ControlClientMessage msg;
+    score::internal::lcm::ControlClientMessage msg;
 
     // This lambda function will be used to set the error of the promise.
     // This lamdba funcitons are used to avoid code duplication.
@@ -178,7 +178,7 @@ void ControlClientImpl::run() {
     std::function<void()> funcDefaultError = [&]()
                                              {
                                                  if( msg.request_or_response_ !=
-                                                     score::vrte::lcm::ControlClientCode::kNotSet )
+                                                     score::internal::lcm::ControlClientCode::kNotSet )
                                                  {
                                                      LM_LOG_WARN() << "ControlClient error. Undefined message from Launch Manager:"
                                                                  << static_cast<int>( msg.request_or_response_ );
@@ -191,50 +191,50 @@ void ControlClientImpl::run() {
         while (ipc_response_thread_running_) {
             if (ipc_channel_->getResponse(msg)) {
                 switch (msg.request_or_response_) {
-                    case score::vrte::lcm::ControlClientCode::kSetStateInvalidArguments:
-                    case score::vrte::lcm::ControlClientCode::kSetStateCancelled:
-                    case score::vrte::lcm::ControlClientCode::kSetStateFailed:
-                    case score::vrte::lcm::ControlClientCode::kSetStateAlreadyInState:
-                    case score::vrte::lcm::ControlClientCode::kSetStateTransitionToSameState:
-                    case score::vrte::lcm::ControlClientCode::kFailedUnexpectedTerminationOnEnter:
+                    case score::internal::lcm::ControlClientCode::kSetStateInvalidArguments:
+                    case score::internal::lcm::ControlClientCode::kSetStateCancelled:
+                    case score::internal::lcm::ControlClientCode::kSetStateFailed:
+                    case score::internal::lcm::ControlClientCode::kSetStateAlreadyInState:
+                    case score::internal::lcm::ControlClientCode::kSetStateTransitionToSameState:
+                    case score::internal::lcm::ControlClientCode::kFailedUnexpectedTerminationOnEnter:
                         funcSetError();
                         break;
 
-                    case score::vrte::lcm::ControlClientCode::kSetStateSuccess:
+                    case score::internal::lcm::ControlClientCode::kSetStateSuccess:
                         funcSetValue();
                         break;
 
-                    case score::vrte::lcm::ControlClientCode::kFailedUnexpectedTermination:
+                    case score::internal::lcm::ControlClientCode::kFailedUnexpectedTermination:
                         funcUtermination();
                         break;
 
-                    case score::vrte::lcm::ControlClientCode::kInitialMachineStateNotSet:
-                    case score::vrte::lcm::ControlClientCode::kInitialMachineStateFailed:
+                    case score::internal::lcm::ControlClientCode::kInitialMachineStateNotSet:
+                    case score::internal::lcm::ControlClientCode::kInitialMachineStateFailed:
                         funcMcStateWrong();
                         break;
 
-                    case score::vrte::lcm::ControlClientCode::kInitialMachineStateSuccess:
+                    case score::internal::lcm::ControlClientCode::kInitialMachineStateSuccess:
                         funcMcStateSuccess();
                         break;
 
                     default:
-                        // score::vrte::lcm::ControlClientCode::kNotSet is just an initialization value
+                        // score::internal::lcm::ControlClientCode::kNotSet is just an initialization value
                         // not an error
                         funcDefaultError();
                         break;
                 }
             }
 
-            std::this_thread::sleep_for(score::vrte::lcm::kControlClientBgThreadSleepTime);
+            std::this_thread::sleep_for(score::internal::lcm::kControlClientBgThreadSleepTime);
         }
     }
 }
 
-score::concurrency::InterruptibleFuture<void> ControlClientImpl::SendIpcMessage(score::vrte::lcm::ControlClientMessage& msg) noexcept {
+score::concurrency::InterruptibleFuture<void> ControlClientImpl::SendIpcMessage(score::internal::lcm::ControlClientMessage& msg) noexcept {
     score::concurrency::InterruptibleFuture<void> retVal_{};
 
-    if (score::vrte::lcm::osal::OsalReturnType::kSuccess ==
-        ipc_request_semaphore_.timedWait(score::vrte::lcm::kControlClientMaxIpcDelay)) {
+    if (score::internal::lcm::osal::OsalReturnType::kSuccess ==
+        ipc_request_semaphore_.timedWait(score::internal::lcm::kControlClientMaxIpcDelay)) {
         // first we need to check if we have empty space in control_client_requests_ array
         uint16_t i = 0U;
 
@@ -250,7 +250,7 @@ score::concurrency::InterruptibleFuture<void> ControlClientImpl::SendIpcMessage(
             // 1) claim the slot and create a fresh promise for this request
             control_client_requests_[i].promise_ = score::concurrency::InterruptiblePromise<void>{};
 
-            if (score::vrte::lcm::ControlClientCode::kGetInitialMachineStateRequest == msg.request_or_response_) {
+            if (score::internal::lcm::ControlClientCode::kGetInitialMachineStateRequest == msg.request_or_response_) {
                 // the GetInitialMachineStateTransitionResult request is a bit special
                 // and will need special treatment in bg thread servicing response_ link
                 control_client_requests_[i].initial_machine_state_transition_request_ = true;
@@ -294,9 +294,9 @@ score::concurrency::InterruptibleFuture<void> ControlClientImpl::SetState(const 
     score::concurrency::InterruptibleFuture<void> retVal_{};
 
     if (nullptr != ipc_channel_) {
-        score::vrte::lcm::ControlClientMessage msg;
+        score::internal::lcm::ControlClientMessage msg;
 
-        msg.request_or_response_ = score::vrte::lcm::ControlClientCode::kSetStateRequest;
+        msg.request_or_response_ = score::internal::lcm::ControlClientCode::kSetStateRequest;
         msg.process_group_state_.pg_name_ = pg_name;
         msg.process_group_state_.pg_state_name_ = pg_state;
 
@@ -314,9 +314,9 @@ score::concurrency::InterruptibleFuture<void> ControlClientImpl::GetInitialMachi
     score::concurrency::InterruptibleFuture<void> retVal_{};
 
     if (nullptr != ipc_channel_) {
-        score::vrte::lcm::ControlClientMessage msg;
+        score::internal::lcm::ControlClientMessage msg;
 
-        msg.request_or_response_ = score::vrte::lcm::ControlClientCode::kGetInitialMachineStateRequest;
+        msg.request_or_response_ = score::internal::lcm::ControlClientCode::kGetInitialMachineStateRequest;
         // pg_name_ is not used by this request
         // pg_state_name_ is not used by this request
 
@@ -336,13 +336,13 @@ score::Result<score::lcm::ExecutionErrorEvent> ControlClientImpl::GetExecutionEr
     score::Result<score::lcm::ExecutionErrorEvent> retVal_ {score::MakeUnexpected(score::lcm::ExecErrc::kCommunicationError)};
 
     if (nullptr != ipc_channel_) {
-        if (score::vrte::lcm::osal::OsalReturnType::kSuccess ==
-            ipc_request_semaphore_.timedWait(score::vrte::lcm::kControlClientMaxIpcDelay)) {
+        if (score::internal::lcm::osal::OsalReturnType::kSuccess ==
+            ipc_request_semaphore_.timedWait(score::internal::lcm::kControlClientMaxIpcDelay)) {
             // 1) prepare message for LCM
-            score::vrte::lcm::ControlClientMessage msg;
+            score::internal::lcm::ControlClientMessage msg;
 
             // future_id_ is not used by this request
-            msg.request_or_response_ = score::vrte::lcm::ControlClientCode::kGetExecutionErrorRequest;
+            msg.request_or_response_ = score::internal::lcm::ControlClientCode::kGetExecutionErrorRequest;
             msg.process_group_state_.pg_name_ = processGroup;
             // pg_state_name_ is not used by this request
 
@@ -352,12 +352,12 @@ score::Result<score::lcm::ExecutionErrorEvent> ControlClientImpl::GetExecutionEr
             // 3) process the response from LCM as kGetExecutionErrorRequest is a synchronous call
             switch (msg.request_or_response_) {
                 // GetExecutionError
-                case score::vrte::lcm::ControlClientCode::kExecutionErrorInvalidArguments:
-                case score::vrte::lcm::ControlClientCode::kExecutionErrorRequestFailed:
+                case score::internal::lcm::ControlClientCode::kExecutionErrorInvalidArguments:
+                case score::internal::lcm::ControlClientCode::kExecutionErrorRequestFailed:
                     retVal_ = score::MakeUnexpected( score::lcm::ExecErrc::kFailed );
                     break;
 
-                case score::vrte::lcm::ControlClientCode::kExecutionErrorRequestSuccess: {
+                case score::internal::lcm::ControlClientCode::kExecutionErrorRequestSuccess: {
                     score::lcm::ExecutionErrorEvent tmp{msg.execution_error_code_,            // executionError
                                                        msg.process_group_state_.pg_name_};  // processGroup
                     retVal_.emplace(std::move(tmp));

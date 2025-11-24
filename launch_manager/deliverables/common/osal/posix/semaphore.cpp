@@ -18,7 +18,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -95,6 +95,6 @@ OsalReturnType Semaphore::wait() {
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score

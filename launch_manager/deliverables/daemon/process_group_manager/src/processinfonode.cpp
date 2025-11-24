@@ -19,7 +19,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -437,7 +437,7 @@ inline void ProcessInfoNode::handleForcedTermination() {
     while ((osal::OsalReturnType::kSuccess ==
             graph_->getProcessGroupManager()->getProcessInterface()->forceTermination(pid_)) &&
            (graph_->getState() == GraphState::kInTransition) &&
-           (terminator_.timedWait(score::vrte::lcm::kMaxSigKillDelay) != osal::OsalReturnType::kSuccess)) {
+           (terminator_.timedWait(score::internal::lcm::kMaxSigKillDelay) != osal::OsalReturnType::kSuccess)) {
         LM_LOG_FATAL() << "Process" << process_index_ << "(" << config_->startup_config_.short_name_
                        << ") did not respond to SIGKILL!!";
     }
@@ -489,6 +489,6 @@ ControlClientChannelP ProcessInfoNode::getControlClientChannel() {
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score

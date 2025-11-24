@@ -20,7 +20,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -285,7 +285,7 @@ class ProcessInfoNode final {
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score
 

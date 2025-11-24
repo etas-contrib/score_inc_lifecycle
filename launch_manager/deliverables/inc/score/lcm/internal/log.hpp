@@ -25,7 +25,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -42,7 +42,7 @@ inline score::mw::log::Logger& _getLmLogger() noexcept {
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score
 
@@ -57,7 +57,7 @@ inline score::mw::log::Logger& _getLmLogger() noexcept {
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -251,17 +251,17 @@ inline Logger& _getLmLogger() noexcept {
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score
 
 #endif  // LC_LOG_SCORE_MW_LOG
 
 // wrapper macros for Launch Manager
-#define LM_LOG_FATAL() (score::vrte::lcm::_getLmLogger().LogFatal())
-#define LM_LOG_ERROR() (score::vrte::lcm::_getLmLogger().LogError())
-#define LM_LOG_WARN() (score::vrte::lcm::_getLmLogger().LogWarn())
-#define LM_LOG_INFO() (score::vrte::lcm::_getLmLogger().LogInfo())
-#define LM_LOG_DEBUG() (score::vrte::lcm::_getLmLogger().LogDebug())
+#define LM_LOG_FATAL() (score::internal::lcm::_getLmLogger().LogFatal())
+#define LM_LOG_ERROR() (score::internal::lcm::_getLmLogger().LogError())
+#define LM_LOG_WARN() (score::internal::lcm::_getLmLogger().LogWarn())
+#define LM_LOG_INFO() (score::internal::lcm::_getLmLogger().LogInfo())
+#define LM_LOG_DEBUG() (score::internal::lcm::_getLmLogger().LogDebug())
 
 #endif  // LCM_LOG_HPP_INCLUDED

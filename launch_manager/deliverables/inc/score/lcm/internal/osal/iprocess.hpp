@@ -29,7 +29,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -50,8 +50,8 @@ struct OsalLimits {
 struct OsalConfig {
     std::string executable_path_{};                                     ///< Path to the executable.
     std::string short_name_;                                            ///< Short name of the process
-    std::array<const char*, score::vrte::lcm::kArgvArraySize> argv_{};  ///< Command-line arguments.
-    char* envp_[static_cast<std::size_t>(score::vrte::lcm::kEnvArraySize)];   ///< Environment variables.
+    std::array<const char*, score::internal::lcm::kArgvArraySize> argv_{};  ///< Command-line arguments.
+    char* envp_[static_cast<std::size_t>(score::internal::lcm::kEnvArraySize)];   ///< Environment variables.
     std::string security_policy_{};          ///< Security policy to apply to this process
     uid_t uid_;                                    ///< User ID.
     gid_t gid_;                                    ///< Group ID.
@@ -170,7 +170,7 @@ class IProcess {
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score
 

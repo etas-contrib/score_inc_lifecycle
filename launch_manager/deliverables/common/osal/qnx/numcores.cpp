@@ -17,7 +17,7 @@
 #include <score/lcm/internal/osal/osalnumcores.hpp>
 
 namespace score {
-namespace vrte {
+namespace internal {
 namespace lcm {
 namespace osal {
 
@@ -32,5 +32,5 @@ uint32_t getNumCores() {
 }
 }  // namespace osal
 }  // namespace lcm
-}  // namespace vrte
+}  // namespace internal
 }  // namespace score

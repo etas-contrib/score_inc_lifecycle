@@ -18,7 +18,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -29,5 +29,5 @@ int setgroups(size_t __n, const gid_t *__groups) noexcept(true) {
 }
 }  // namespace osal
 }  // namespace lcm
-}  // namespace vrte
+}  // namespace internal
 }  // namespace score

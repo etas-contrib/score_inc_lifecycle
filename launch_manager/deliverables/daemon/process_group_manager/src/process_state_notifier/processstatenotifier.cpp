@@ -15,7 +15,7 @@
 #include <score/lcm/internal/process_state_notifier/processstatenotifier.hpp>
 
 namespace score {
-namespace vrte {
+namespace internal {
 namespace lcm {
 
 ProcessStateNotifier::ProcessStateNotifier() noexcept {
@@ -49,5 +49,5 @@ bool ProcessStateNotifier::queuePosixProcess(const score::lcm::PosixProcess& f_p
 }
 
 }  // namespace lcm
-}  // namespace vrte
+}  // namespace internal
 }  // namespace score

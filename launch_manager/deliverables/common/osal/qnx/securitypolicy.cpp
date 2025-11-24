@@ -16,7 +16,7 @@
 #include <cerrno>
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -38,6 +38,6 @@ int setSecurityPolicy(const char* policy) {
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score

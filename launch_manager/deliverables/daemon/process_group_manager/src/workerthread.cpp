@@ -16,7 +16,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -58,6 +58,6 @@ template class WorkerThread<ProcessInfoNode>;
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score

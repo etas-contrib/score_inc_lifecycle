@@ -22,7 +22,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -87,12 +87,12 @@ class OsHandler final {
     osal::IProcess& process_interface_;
 
     /// @brief Thread object to manage execution of the run method.
-    std::thread os_handler_{&score::vrte::lcm::OsHandler::run, this};
+    std::thread os_handler_{&score::internal::lcm::OsHandler::run, this};
 };
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score
 

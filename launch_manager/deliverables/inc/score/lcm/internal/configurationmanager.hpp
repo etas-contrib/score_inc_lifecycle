@@ -33,7 +33,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -100,7 +100,7 @@ struct ProcessGroup final {
 /// It is also responsible for rereading (updating) configuration during software update.
 // RULECHECKER_comment(1, 1, check_incomplete_data_member_construction, "wi 45913 - This struct is POD, which doesn't have user-declared constructor. The rule doesn’t apply.", false)
 class ConfigurationManager final {
-    //    using namespace ::score::vrte::ucm::ipc;
+    //    using namespace ::score::internal::ucm::ipc;
    public:
     /// @brief Initializes the configuration manager.
     ///
@@ -135,7 +135,7 @@ class ConfigurationManager final {
     /// @param sw_cluster_id The sofware cluster to process
     /// @return Returns true if the configurations were loaded successfully, false otherwise.
     // bool reloadConfiguration(
-    // const score::vrte::ucm::ipc::Message::Action action,
+    // const score::internal::ucm::ipc::Message::Action action,
     // const IdentifierHash& cluster_id );
 
     /// @brief Get the number of OS processes configured for a particular process group.
@@ -480,7 +480,7 @@ class ConfigurationManager final {
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score
 

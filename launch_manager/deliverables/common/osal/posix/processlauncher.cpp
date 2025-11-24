@@ -39,11 +39,11 @@ constexpr int kPosixSuccess = 0;
 
 namespace {
 
-using score::vrte::lcm::osal::CommsType;
-using score::vrte::lcm::osal::IpcCommsSync;
-using score::vrte::lcm::osal::sysexit;
+using score::internal::lcm::osal::CommsType;
+using score::internal::lcm::osal::IpcCommsSync;
+using score::internal::lcm::osal::sysexit;
 
-void handleComms(score::vrte::lcm::osal::ChildProcessConfig& param) {
+void handleComms(score::internal::lcm::osal::ChildProcessConfig& param) {
     if (param.shared_block) {
         param.fd = dup2(param.fd, param.shared_block->sync_fd);  // always make sure we are using fd=3
         param.shared_block->pid_ = getpid();                     // Store pid for check at client end
@@ -80,7 +80,7 @@ void handleComms(score::vrte::lcm::osal::ChildProcessConfig& param) {
     }
 }
 
-void changeCurrentWorkingDirectory(const score::vrte::lcm::osal::OsalConfig& config) {
+void changeCurrentWorkingDirectory(const score::internal::lcm::osal::OsalConfig& config) {
     // Change current working directory to the same as the executable
     constexpr size_t string_size = static_cast<size_t>(PATH_MAX);
     // Notice that this next static variable is duplicated by the fork() and so does not need
@@ -99,7 +99,7 @@ void changeCurrentWorkingDirectory(const score::vrte::lcm::osal::OsalConfig& con
     }
 }
 
-void implementMemoryResourceLimits(const score::vrte::lcm::osal::OsalConfig& config) {
+void implementMemoryResourceLimits(const score::internal::lcm::osal::OsalConfig& config) {
     rlimit limit;
 
     if (config.resource_limits_.data_ != 0U) {
@@ -143,9 +143,9 @@ void implementMemoryResourceLimits(const score::vrte::lcm::osal::OsalConfig& con
     }
 }
 
-void changeSecurityPolicy(const score::vrte::lcm::osal::OsalConfig& config) {
+void changeSecurityPolicy(const score::internal::lcm::osal::OsalConfig& config) {
     if (config.security_policy_ != "") {
-        if (score::vrte::lcm::osal::setSecurityPolicy(config.security_policy_.c_str()) != 0) {
+        if (score::internal::lcm::osal::setSecurityPolicy(config.security_policy_.c_str()) != 0) {
             LM_LOG_ERROR() << "[New process] changeSecurityPolicy(" << config.security_policy_
                            << ") failed:" << strerror(errno);
             sysexit(EXIT_FAILURE);
@@ -157,7 +157,7 @@ void changeSecurityPolicy(const score::vrte::lcm::osal::OsalConfig& config) {
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -216,14 +216,14 @@ OsalReturnType IProcess::startProcess(ProcessID* pid, IpcCommsP* block, const Os
 
 inline bool IProcess::setupComms(IpcCommsP& block, int& fd, const OsalConfig& config) {
     bool comms_result = true;
-    char shm_name[static_cast<uint32_t>(score::vrte::lcm::ProcessLimits::maxLocalBuffSize)];
+    char shm_name[static_cast<uint32_t>(score::internal::lcm::ProcessLimits::maxLocalBuffSize)];
     size_t length = sizeof(IpcCommsSync);
 
     if (CommsType::kControlClient == config.comms_type_) {
         length += sizeof(ControlClientChannel);
     }
 
-    static_cast<void>(snprintf(shm_name, static_cast<uint32_t>(score::vrte::lcm::ProcessLimits::maxLocalBuffSize),
+    static_cast<void>(snprintf(shm_name, static_cast<uint32_t>(score::internal::lcm::ProcessLimits::maxLocalBuffSize),
                                "/ipc_shared_mem%u", shm_name_counter++));
 
     fd = shm_open(shm_name, O_CREAT | O_EXCL | O_RDWR, 0U);
@@ -467,6 +467,6 @@ OsalReturnType IProcess::waitForkRunning(IpcCommsP sync, std::chrono::millisecon
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score

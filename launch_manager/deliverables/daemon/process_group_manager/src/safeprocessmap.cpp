@@ -19,7 +19,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -245,6 +245,6 @@ int32_t SafeProcessMap::insertIfNotTerminated(osal::ProcessID key, ProcessInfoNo
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score

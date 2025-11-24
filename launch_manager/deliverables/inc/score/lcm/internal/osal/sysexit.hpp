@@ -17,7 +17,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -29,6 +29,6 @@ namespace osal {
 void sysexit(int status);
 }  // namespace osal
 }  // namespace lcm
-}  // namespace vrte
+}  // namespace internal
 }  // namespace score
 #endif

@@ -18,7 +18,7 @@
 #include <cstdlib>
 
 namespace score {
-namespace vrte {
+namespace internal {
 namespace lcm {
 
 /// @brief LifecycleClientExt class
@@ -35,7 +35,7 @@ class LifecycleClientExt {
 
 };  // class LifecycleClientExt
 }  // namespace lcm
-}  // namespace vrte
+}  // namespace internal
 }  // namespace score
 
 #endif

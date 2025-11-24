@@ -18,7 +18,7 @@
 #include <cstdint>
 
 namespace score {
-namespace vrte {
+namespace internal {
 namespace lcm {
 namespace osal {
 // coverity[autosar_cpp14_m3_4_1_violation:INTENTIONAL] The value is used in a global context.
@@ -30,7 +30,7 @@ uint32_t getNumCores();
 
 }  // namespace osal
 }  // namespace lcm
-}  // namespace vrte
+}  // namespace internal
 }  // namespace score
 
 #endif

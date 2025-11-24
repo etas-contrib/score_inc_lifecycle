@@ -20,7 +20,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -221,6 +221,6 @@ std::mutex ControlClientChannel::init_mutex_{};
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score

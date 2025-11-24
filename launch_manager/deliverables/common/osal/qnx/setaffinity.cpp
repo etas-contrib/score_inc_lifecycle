@@ -16,7 +16,7 @@
 #include <score/lcm/internal/osal/setaffinity.hpp>
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -29,5 +29,5 @@ int32_t setaffinity(uint32_t cpumask) noexcept(true) {
 }
 }  // namespace osal
 }  // namespace lcm
-}  // namespace vrte
+}  // namespace internal
 }  // namespace score

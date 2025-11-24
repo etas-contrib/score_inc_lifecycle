@@ -18,7 +18,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -53,7 +53,7 @@ template <class T>
 bool JobQueue<T>::addJobToQueue(std::shared_ptr<T> job) {
     bool result = false;
 
-    if (osal::OsalReturnType::kSuccess == num_spaces_.timedWait(score::vrte::lcm::kMaxQueueDelay)) {
+    if (osal::OsalReturnType::kSuccess == num_spaces_.timedWait(score::internal::lcm::kMaxQueueDelay)) {
         std::size_t index = static_cast<std::size_t>(in_index_.fetch_add(1U, std::memory_order_relaxed)) % capacity_;
 
         std::atomic_store_explicit(&the_items_[index], job, std::memory_order_release);
@@ -85,6 +85,6 @@ template class JobQueue<ProcessInfoNode>;
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score

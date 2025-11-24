@@ -15,7 +15,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -38,6 +38,6 @@ constexpr std::chrono::milliseconds kLifecycleClientBgThreadSleepTime(
     10);  ///< The time for which Lifecycle Client background thread sleeps after polling the SIGTERM flag
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score

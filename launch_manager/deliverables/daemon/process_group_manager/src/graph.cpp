@@ -21,7 +21,7 @@
 
 namespace score {
 
-namespace vrte {
+namespace internal {
 
 namespace lcm {
 
@@ -499,6 +499,6 @@ std::chrono::time_point<std::chrono::steady_clock> Graph::getRequestStartTime() 
 
 }  // namespace lcm
 
-}  // namespace vrte
+}  // namespace internal
 
 }  // namespace score
