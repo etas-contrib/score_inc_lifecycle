@@ -628,13 +628,13 @@ void ConfigurationManager::parseExecutionDependency(
     }
 }
 
-ProcessState ConfigurationManager::getProcessState(const IdentifierHash& state_name) {
-    ProcessState result = ProcessState::kIdle;
+score::lcm::ProcessState ConfigurationManager::getProcessState(const IdentifierHash& state_name) {
+    score::lcm::ProcessState result = score::lcm::ProcessState::kIdle;
 
     if (state_name == static_cast<IdentifierHash>(PROCESS_RUNNING_STATE)) {
-        result = ProcessState::kRunning;
+        result = score::lcm::ProcessState::kRunning;
     } else if (state_name == static_cast<IdentifierHash>(PROCESS_TERMINATED_STATE)) {
-        result = ProcessState::kTerminated;
+        result = score::lcm::ProcessState::kTerminated;
     }
 
     return result;

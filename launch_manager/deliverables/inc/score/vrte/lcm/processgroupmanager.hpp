@@ -124,7 +124,7 @@ class ProcessGroupManager final {
     ///          if no more free shared memory, the PosixProcess is not sent.
     /// @param[in]   f_posixProcess   The PosixProcess to be queued
     /// @returns True on success, false for failure (corresponding to kCommunicationError).
-    bool queuePosixProcess(const PosixProcess& f_posixProcess) {
+    bool queuePosixProcess(const score::lcm::PosixProcess& f_posixProcess) {
         return process_state_notifier_.queuePosixProcess(f_posixProcess);
     }
 

@@ -55,7 +55,7 @@ struct PgManagerConfig final {
 /// @brief Represents process dependency in a particular process group associated process.
 // RULECHECKER_comment(1, 1, check_incomplete_data_member_construction, "wi 45913 - This struct is POD, which doesn't have user-declared constructor. The rule doesn’t apply.", false)
 struct Dependency final {
-    ProcessState process_state_;  ///< The state of the other process upon which starting of this process depends.
+    score::lcm::ProcessState process_state_;  ///< The state of the other process upon which starting of this process depends.
     IdentifierHash target_process_id_;  ///< The ID of the target process this dependency is associated with.
     uint32_t os_process_index_;           ///< The index of the OS process in the target process list.
 };
@@ -310,7 +310,7 @@ class ConfigurationManager final {
     /// @param[in] state_name The name of the process state as an `IdentifierHash`.
     /// @return The `ProcessState` enumeration value associated with the state name. If the state name does not match
     ///         any defined states, the function returns an undefined or default state.
-    ProcessState getProcessState(const IdentifierHash& state_name);
+    score::lcm::ProcessState getProcessState(const IdentifierHash& state_name);
 
     /// @brief Get a pointer to a ProcessGroup by its ID.
     /// This function retrieves a pointer to a ProcessGroup identified by the process group name ID.

@@ -37,7 +37,7 @@ bool ProcessStateNotifier::init() noexcept {
     return ret;
 }
 
-bool ProcessStateNotifier::queuePosixProcess(const PosixProcess& f_posixProcess) noexcept {
+bool ProcessStateNotifier::queuePosixProcess(const score::lcm::PosixProcess& f_posixProcess) noexcept {
     bool ret = true;
     if (m_LCM_PHM_socket.trySend(f_posixProcess) == ipc_dropin::ReturnCode::kOk) {
         // nothing

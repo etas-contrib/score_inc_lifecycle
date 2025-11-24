@@ -66,12 +66,12 @@ class ProcessStateNotifier final {
     ///          if no more free shared memory, the PosixProcess is not sent.
     /// @param[in]   f_posixProcess   The PosixProcess to be queued
     /// @returns True on success, false for failure (corresponding to kCommunicationError).
-    bool queuePosixProcess(const PosixProcess& f_posixProcess) noexcept;
+    bool queuePosixProcess(const score::lcm::PosixProcess& f_posixProcess) noexcept;
 
    private:
     /// @brief ipc_dropin::Socket through which we retrieve process state updates from LCM
-    ipc_dropin::Socket<static_cast<size_t>(PipcConstants::PIPC_MAXPAYLOAD),
-                          static_cast<size_t>(PipcConstants::PIPC_QUEUE_SIZE)>
+    ipc_dropin::Socket<static_cast<size_t>(score::lcm::PipcConstants::PIPC_MAXPAYLOAD),
+                          static_cast<size_t>(score::lcm::PipcConstants::PIPC_QUEUE_SIZE)>
         m_LCM_PHM_socket{};
 };
 

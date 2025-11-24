@@ -50,7 +50,7 @@ class ProcessInfoNode final {
           process_index_(0),
           pid_(0),
           status_(0),
-          process_state_(ProcessState::kIdle),
+          process_state_(score::lcm::ProcessState::kIdle),
           dependencies_(0),
           start_dependencies_(0),
           stop_dependencies_(0),
@@ -91,7 +91,7 @@ class ProcessInfoNode final {
 
     /// @brief Get the current state of the process recorded in the ProcessInfoNode
     /// @return a value from the ProcessState enumeration
-    ProcessState getState() const;
+    score::lcm::ProcessState getState() const;
 
     /// @brief Participate in graph initialisation
     /// If starting== false, the graph is in the first (stopping) stage, and the number of dependencies for the starting phase
@@ -119,7 +119,7 @@ class ProcessInfoNode final {
     /// @brief Add a successor item. The ProcessState parameter determines which list the successor is added to
     /// @param successor_node The ProcessInfoNode to succeed this one
     /// @param dependency The dependency relation (kRunning or kTerminated)
-    void addSuccessorNode(std::shared_ptr<ProcessInfoNode>& successor_node, ProcessState dependency);
+    void addSuccessorNode(std::shared_ptr<ProcessInfoNode>& successor_node, score::lcm::ProcessState dependency);
 
     /// @brief Return the index of this process in the process group. This method is used by the Graph object during
     /// calculation of the successor lists.
@@ -148,7 +148,7 @@ class ProcessInfoNode final {
     ///         that were started before PHM was started.
     /// @param new_state
     /// @return true if the state was set to the provided value, false otherwise
-    bool setState(ProcessState new_state);
+    bool setState(score::lcm::ProcessState new_state);
 
     /// @brief Request process termination
     /// Set the process state to terminating, and if this was successful, start the timeout and request termination of
@@ -235,7 +235,7 @@ class ProcessInfoNode final {
     std::atomic<int32_t> status_{0};
 
     /// @brief The current state of the OS process
-    std::atomic<ProcessState> process_state_{ProcessState::kIdle};
+    std::atomic<score::lcm::ProcessState> process_state_{score::lcm::ProcessState::kIdle};
 
     /// @brief Number of nodes still to process before this one can be processed
     std::atomic_uint32_t dependencies_{0};
