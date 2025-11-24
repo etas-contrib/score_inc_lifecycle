@@ -10,7 +10,7 @@
 *
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
-#include <score/vrte/lcm/osal/securitypolicy.hpp>
+#include <score/lcm/internal/osal/securitypolicy.hpp>
 
 namespace score {
 

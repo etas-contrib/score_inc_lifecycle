@@ -12,7 +12,7 @@
 ********************************************************************************/
 #include <unistd.h>
 
-#include <score/vrte/lcm/osal/setgroups.hpp>
+#include <score/lcm/internal/osal/setgroups.hpp>
 
 namespace score {
 

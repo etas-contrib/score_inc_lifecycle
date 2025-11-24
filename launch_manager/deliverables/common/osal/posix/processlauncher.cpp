@@ -20,14 +20,14 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-#include <score/vrte/lcm/log.hpp>
-#include <score/vrte/lcm/osal/iprocess.hpp>
-#include <score/vrte/lcm/osal/osalipccomms.hpp>
-#include <score/vrte/lcm/osal/securitypolicy.hpp>
-#include <score/vrte/lcm/osal/setaffinity.hpp>
-#include <score/vrte/lcm/osal/setgroups.hpp>
-#include <score/vrte/lcm/osal/sysexit.hpp>
-#include <score/vrte/lcm/controlclientchannel.hpp>
+#include <score/lcm/internal/log.hpp>
+#include <score/lcm/internal/osal/iprocess.hpp>
+#include <score/lcm/internal/osal/osalipccomms.hpp>
+#include <score/lcm/internal/osal/securitypolicy.hpp>
+#include <score/lcm/internal/osal/setaffinity.hpp>
+#include <score/lcm/internal/osal/setgroups.hpp>
+#include <score/lcm/internal/osal/sysexit.hpp>
+#include <score/lcm/internal/controlclientchannel.hpp>
 #include <cerrno>
 #include <csignal>
 #include <cstdio>

@@ -19,8 +19,8 @@
 #include <sys/types.h>
 
 #include <atomic>
-#include <score/vrte/lcm/config.hpp>
-#include <score/vrte/lcm/osal/osalipccomms.hpp>
+#include <score/lcm/internal/config.hpp>
+#include <score/lcm/internal/osal/osalipccomms.hpp>
 #include <cstdint>
 
 #include <array>

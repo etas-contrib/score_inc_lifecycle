@@ -14,10 +14,10 @@
 #include <sys/mman.h>
 #include <unistd.h>
 
-#include <score/vrte/lcm/config.hpp>
-#include <score/vrte/lcm/lifecycleclientimpl.hpp>
-#include <score/vrte/lcm/log.hpp>
-#include <score/vrte/lcm/osal/sysexit.hpp>
+#include <score/lcm/internal/config.hpp>
+#include <score/lcm/internal/lifecycleclientimpl.hpp>
+#include <score/lcm/internal/log.hpp>
+#include <score/lcm/internal/osal/sysexit.hpp>
 #include <csignal>
 #include <cstring>
 

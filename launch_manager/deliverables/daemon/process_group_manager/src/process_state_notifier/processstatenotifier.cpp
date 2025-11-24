@@ -11,8 +11,8 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <score/vrte/lcm/log.hpp>
-#include <score/vrte/lcm/process_state_notifier/processstatenotifier.hpp>
+#include <score/lcm/internal/log.hpp>
+#include <score/lcm/internal/process_state_notifier/processstatenotifier.hpp>
 
 namespace score {
 namespace vrte {

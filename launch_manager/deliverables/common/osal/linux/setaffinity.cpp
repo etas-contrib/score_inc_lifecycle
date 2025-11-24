@@ -13,7 +13,7 @@
 
 #include <sched.h>
 
-#include <score/vrte/lcm/osal/setaffinity.hpp>
+#include <score/lcm/internal/osal/setaffinity.hpp>
 #include <cstdint>
 
 namespace score {

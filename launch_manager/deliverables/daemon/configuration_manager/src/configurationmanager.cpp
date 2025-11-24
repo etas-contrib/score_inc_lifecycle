@@ -14,10 +14,10 @@
 #include <string_view>
 #include <score/lcm/exec_error_domain.h>
 
-#include <score/vrte/lcm/configurationmanager.hpp>
-#include <score/vrte/lcm/process_group_state_id.hpp>
-#include <score/vrte/lcm/log.hpp>
-#include <score/vrte/lcm/osal/osalnumcores.hpp>
+#include <score/lcm/internal/configurationmanager.hpp>
+#include <score/lcm/internal/process_group_state_id.hpp>
+#include <score/lcm/internal/log.hpp>
+#include <score/lcm/internal/osal/osalnumcores.hpp>
 
 #include <fstream>
 

@@ -13,10 +13,10 @@
 
 #include "score/span.hpp"
 
-#include <score/vrte/lcm/processgroupmanager.hpp>
-#include <score/vrte/lcm/graph.hpp>
-#include <score/vrte/lcm/log.hpp>
-#include <score/vrte/lcm/processinfonode.hpp>
+#include <score/lcm/internal/processgroupmanager.hpp>
+#include <score/lcm/internal/graph.hpp>
+#include <score/lcm/internal/log.hpp>
+#include <score/lcm/internal/processinfonode.hpp>
 #include <ctime>
 
 namespace score {

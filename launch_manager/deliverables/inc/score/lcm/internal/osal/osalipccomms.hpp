@@ -17,7 +17,7 @@
 
 #include <sys/mman.h>
 
-#include <score/vrte/lcm/log.hpp>
+#include <score/lcm/internal/log.hpp>
 #include <memory>
 
 #include "semaphore.hpp"

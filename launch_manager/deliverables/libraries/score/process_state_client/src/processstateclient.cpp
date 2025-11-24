@@ -12,7 +12,7 @@
  ********************************************************************************/
 
 #include <score/lcm/process_state_client/processstateclient.hpp>
-#include <score/vrte/lcm/log.hpp>
+#include <score/lcm/internal/log.hpp>
 
 namespace score {
 

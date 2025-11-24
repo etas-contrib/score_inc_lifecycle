@@ -16,8 +16,8 @@
 #define SAFE_PROCESS_MAP_HPP_INCLUDED
 
 #include <atomic>
-#include <score/vrte/lcm/osal/iprocess.hpp>
-#include <score/vrte/lcm/processinfonode.hpp>
+#include <score/lcm/internal/osal/iprocess.hpp>
+#include <score/lcm/internal/processinfonode.hpp>
 #include <cstdint>
 
 namespace score {

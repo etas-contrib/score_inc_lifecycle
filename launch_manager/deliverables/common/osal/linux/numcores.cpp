@@ -13,7 +13,7 @@
 
 #include <sys/unistd.h>
 
-#include <score/vrte/lcm/osal/osalnumcores.hpp>
+#include <score/lcm/internal/osal/osalnumcores.hpp>
 
 namespace score {
 namespace vrte {

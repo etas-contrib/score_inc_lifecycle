@@ -11,11 +11,11 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <score/vrte/lcm/processgroupmanager.hpp>
-#include <score/vrte/lcm/graph.hpp>
-#include <score/vrte/lcm/log.hpp>
-#include <score/vrte/lcm/osal/osalipccomms.hpp>
-#include <score/vrte/lcm/processinfonode.hpp>
+#include <score/lcm/internal/processgroupmanager.hpp>
+#include <score/lcm/internal/graph.hpp>
+#include <score/lcm/internal/log.hpp>
+#include <score/lcm/internal/osal/osalipccomms.hpp>
+#include <score/lcm/internal/processinfonode.hpp>
 
 namespace score {
 

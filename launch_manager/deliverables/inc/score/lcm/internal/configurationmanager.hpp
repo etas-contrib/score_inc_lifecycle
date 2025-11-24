@@ -24,9 +24,9 @@
 #include <flatbuffers/flatbuffers.h>
 
 #include <score/lcm/identifier_hash.hpp>
-#include <score/vrte/lcm/config.hpp>
-#include <score/vrte/lcm/process_group_state_id.hpp>
-#include <score/vrte/lcm/osal/iprocess.hpp>
+#include <score/lcm/internal/config.hpp>
+#include <score/lcm/internal/process_group_state_id.hpp>
+#include <score/lcm/internal/osal/iprocess.hpp>
 #include <score/lcm/process_state_client/posixprocess.hpp>
 
 #include "lm_flatcfg_generated.h"

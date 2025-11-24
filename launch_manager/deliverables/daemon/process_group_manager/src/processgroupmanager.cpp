@@ -14,8 +14,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#include <score/vrte/lcm/processgroupmanager.hpp>
-#include <score/vrte/lcm/log.hpp>
+#include <score/lcm/internal/processgroupmanager.hpp>
+#include <score/lcm/internal/log.hpp>
 #include <csignal>
 #include <sys/wait.h>
 

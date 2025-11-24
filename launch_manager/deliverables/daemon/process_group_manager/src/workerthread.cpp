@@ -11,8 +11,8 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <score/vrte/lcm/processinfonode.hpp>
-#include <score/vrte/lcm/workerthread.hpp>
+#include <score/lcm/internal/processinfonode.hpp>
+#include <score/lcm/internal/workerthread.hpp>
 
 namespace score {
 

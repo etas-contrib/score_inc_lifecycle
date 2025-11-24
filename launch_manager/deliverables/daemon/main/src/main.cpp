@@ -14,8 +14,8 @@
 #include <unistd.h>
 #include <iostream>
 
-#include <score/vrte/lcm/processgroupmanager.hpp>
-#include <score/vrte/lcm/log.hpp>
+#include <score/lcm/internal/processgroupmanager.hpp>
+#include <score/lcm/internal/log.hpp>
 
 using namespace std;
 using namespace score::vrte::lcm;

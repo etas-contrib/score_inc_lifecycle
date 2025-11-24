@@ -16,7 +16,7 @@
 #define WORKER_THREAD_HPP_INCLUDED
 
 #include <atomic>
-#include <score/vrte/lcm/jobqueue.hpp>
+#include <score/lcm/internal/jobqueue.hpp>
 #include <memory>
 #include <thread>
 #include <vector>

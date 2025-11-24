@@ -19,8 +19,8 @@
 #include <score/lcm/control_client.h>
 
 #include <score/lcm/identifier_hash.hpp>
-#include <score/vrte/lcm/log.hpp>
-#include <score/vrte/lcm/control_client_impl.hpp>
+#include <score/lcm/internal/log.hpp>
+#include <score/lcm/internal/control_client_impl.hpp>
 #include <cstdint>
 #include <memory>
 #include <thread>

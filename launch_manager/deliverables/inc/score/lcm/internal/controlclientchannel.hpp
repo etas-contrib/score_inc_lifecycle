@@ -16,8 +16,8 @@
 #define CONTROL_CLIENT_CHANNEL_HPP_INCLUDED
 
 #include <atomic>
-#include <score/vrte/lcm/process_group_state_id.hpp>
-#include <score/vrte/lcm/osal/osalipccomms.hpp>
+#include <score/lcm/internal/process_group_state_id.hpp>
+#include <score/lcm/internal/osal/osalipccomms.hpp>
 #include <condition_variable>
 #include <mutex>
 

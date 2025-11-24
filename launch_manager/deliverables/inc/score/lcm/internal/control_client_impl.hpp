@@ -21,9 +21,9 @@
 
 #include <score/lcm/identifier_hash.hpp>
 #include <atomic>
-#include <score/vrte/lcm/config.hpp>
-#include <score/vrte/lcm/osal/semaphore.hpp>
-#include <score/vrte/lcm/controlclientchannel.hpp>
+#include <score/lcm/internal/config.hpp>
+#include <score/lcm/internal/osal/semaphore.hpp>
+#include <score/lcm/internal/controlclientchannel.hpp>
 #include <functional>
 
 namespace score {

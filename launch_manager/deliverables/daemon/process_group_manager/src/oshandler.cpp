@@ -11,7 +11,7 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <score/vrte/lcm/oshandler.hpp>
+#include <score/lcm/internal/oshandler.hpp>
 
 namespace score {
 

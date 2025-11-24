@@ -11,7 +11,7 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <score/vrte/lcm/config.hpp>
+#include <score/lcm/internal/config.hpp>
 
 namespace score {
 

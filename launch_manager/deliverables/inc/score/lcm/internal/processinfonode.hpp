@@ -15,8 +15,8 @@
 #define _INCLUDED_PROCESSINFONODE_
 
 #include <atomic>
-#include <score/vrte/lcm/configurationmanager.hpp>
-#include <score/vrte/lcm/controlclientchannel.hpp>
+#include <score/lcm/internal/configurationmanager.hpp>
+#include <score/lcm/internal/controlclientchannel.hpp>
 
 namespace score {
 

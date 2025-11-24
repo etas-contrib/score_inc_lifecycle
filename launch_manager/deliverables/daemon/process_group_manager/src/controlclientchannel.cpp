@@ -13,8 +13,8 @@
 
 #include <sys/mman.h>
 
-#include <score/vrte/lcm/config.hpp>
-#include <score/vrte/lcm/controlclientchannel.hpp>
+#include <score/lcm/internal/config.hpp>
+#include <score/lcm/internal/controlclientchannel.hpp>
 #include <cstring>
 #include <thread>
 

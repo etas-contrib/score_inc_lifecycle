@@ -11,7 +11,7 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <score/vrte/lcm/osal/semaphore.hpp>
+#include <score/lcm/internal/osal/semaphore.hpp>
 #include <cerrno>
 #include <chrono>
 #include <thread>

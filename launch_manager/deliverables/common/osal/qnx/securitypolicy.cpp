@@ -12,7 +12,7 @@
 ********************************************************************************/
 #include <secpol/secpol.h>
 
-#include <score/vrte/lcm/osal/securitypolicy.hpp>
+#include <score/lcm/internal/osal/securitypolicy.hpp>
 #include <cerrno>
 namespace score {
 

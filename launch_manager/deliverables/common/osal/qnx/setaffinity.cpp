@@ -13,7 +13,7 @@
 #include <internal/ExcludeCoverageAdapter.h>
 #include <sys/neutrino.h>
 
-#include <score/vrte/lcm/osal/setaffinity.hpp>
+#include <score/lcm/internal/osal/setaffinity.hpp>
 namespace score {
 
 namespace vrte {

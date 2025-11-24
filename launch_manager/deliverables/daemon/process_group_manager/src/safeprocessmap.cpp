@@ -11,8 +11,8 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <score/vrte/lcm/processinfonode.hpp>
-#include <score/vrte/lcm/safeprocessmap.hpp>
+#include <score/lcm/internal/processinfonode.hpp>
+#include <score/lcm/internal/safeprocessmap.hpp>
 #include <cstdio>
 #include <cstdlib>
 #include <thread>

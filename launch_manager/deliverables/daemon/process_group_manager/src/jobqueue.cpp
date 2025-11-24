@@ -11,9 +11,9 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <score/vrte/lcm/config.hpp>
-#include <score/vrte/lcm/jobqueue.hpp>
-#include <score/vrte/lcm/osal/semaphore.hpp>
+#include <score/lcm/internal/config.hpp>
+#include <score/lcm/internal/jobqueue.hpp>
+#include <score/lcm/internal/osal/semaphore.hpp>
 #include <cstdio>
 
 namespace score {

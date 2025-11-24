@@ -16,16 +16,16 @@
 #define PROCESSGROUPMANAGER_HPP_INCLUDED
 
 #include <score/lcm/identifier_hash.hpp>
-#include <score/vrte/lcm/configurationmanager.hpp>
-#include <score/vrte/lcm/graph.hpp>
-#include <score/vrte/lcm/jobqueue.hpp>
-#include <score/vrte/lcm/osal/iprocess.hpp>
-#include <score/vrte/lcm/oshandler.hpp>
-#include <score/vrte/lcm/process_state_notifier/processstatenotifier.hpp>
-#include <score/vrte/lcm/processinfonode.hpp>
-#include <score/vrte/lcm/safeprocessmap.hpp>
-#include <score/vrte/lcm/controlclientchannel.hpp>
-#include <score/vrte/lcm/workerthread.hpp>
+#include <score/lcm/internal/configurationmanager.hpp>
+#include <score/lcm/internal/graph.hpp>
+#include <score/lcm/internal/jobqueue.hpp>
+#include <score/lcm/internal/osal/iprocess.hpp>
+#include <score/lcm/internal/oshandler.hpp>
+#include <score/lcm/internal/process_state_notifier/processstatenotifier.hpp>
+#include <score/lcm/internal/processinfonode.hpp>
+#include <score/lcm/internal/safeprocessmap.hpp>
+#include <score/lcm/internal/controlclientchannel.hpp>
+#include <score/lcm/internal/workerthread.hpp>
 #include <cstdint>
 #include <memory>
 #include <ctime>

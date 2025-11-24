@@ -15,8 +15,8 @@
 #ifndef OS_HANDLER_HPP_INCLUDED
 #define OS_HANDLER_HPP_INCLUDED
 
-#include <score/vrte/lcm/osal/iprocess.hpp>
-#include <score/vrte/lcm/safeprocessmap.hpp>
+#include <score/lcm/internal/osal/iprocess.hpp>
+#include <score/lcm/internal/safeprocessmap.hpp>
 #include <chrono>
 #include <thread>
 
