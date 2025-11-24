@@ -16,12 +16,12 @@
 #define WORKER_THREAD_HPP_INCLUDED
 
 #include <atomic>
-#include <etas/vrte/lcm/jobqueue.hpp>
+#include <score/vrte/lcm/jobqueue.hpp>
 #include <memory>
 #include <thread>
 #include <vector>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -76,6 +76,6 @@ class WorkerThread final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  // WORKER_THREAD_HPP_INCLUDED

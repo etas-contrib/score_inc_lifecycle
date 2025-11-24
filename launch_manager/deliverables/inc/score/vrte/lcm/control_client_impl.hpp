@@ -21,9 +21,9 @@
 
 #include <score/lcm/identifier_hash.hpp>
 #include <atomic>
-#include <etas/vrte/lcm/config.hpp>
-#include <etas/vrte/lcm/osal/semaphore.hpp>
-#include <etas/vrte/lcm/controlclientchannel.hpp>
+#include <score/vrte/lcm/config.hpp>
+#include <score/vrte/lcm/osal/semaphore.hpp>
+#include <score/vrte/lcm/controlclientchannel.hpp>
 #include <functional>
 
 namespace score {
@@ -149,7 +149,7 @@ class ControlClientImpl final {
     /// A promise for such a request is stored in this array and is fulfilled when
     /// answer arrives from LCM.
     std::array<ControlClientRequestInfo,
-                     static_cast<uint16_t>(etas::vrte::lcm::ControlClientLimits::kControlClientMaxRequests)>
+                     static_cast<uint16_t>(score::vrte::lcm::ControlClientLimits::kControlClientMaxRequests)>
         control_client_requests_;
 
     /// @brief Semaphore used to protect access to the request_ link of ControlClientChannel,
@@ -159,7 +159,7 @@ class ControlClientImpl final {
     /// Please note that synchronization for control_client_requests_ is only needed, when we are booking a slot
     /// inside this array. When we are releasing a slot inside this array, this can be done without
     /// ipc_request_semaphore_ protection.
-    etas::vrte::lcm::osal::Semaphore ipc_request_semaphore_;
+    score::vrte::lcm::osal::Semaphore ipc_request_semaphore_;
 
     /// @brief Thread used for monitoring response_ link of ControlClientChannel.
     /// Asynchronous nature of ControlClient API means responses to ControlClient requests, will arrive at
@@ -181,7 +181,7 @@ class ControlClientImpl final {
 
     /// @brief Handle to the real IPC communication channel with LCM
     /// This handle is used to perform low level communication with LCM.
-    etas::vrte::lcm::ControlClientChannelP ipc_channel_;
+    score::vrte::lcm::ControlClientChannelP ipc_channel_;
 
     /// @brief Helper method to send a message to LCM, through IPC link (aka request_ link).
     ///
@@ -202,7 +202,7 @@ class ControlClientImpl final {
     /// @error score::lcm::ExecErrc::kCommunicationError if we can't get access to the request_ link
     ///
     /// @threadsafety{thread-safe}
-    score::concurrency::InterruptibleFuture<void> SendIpcMessage(etas::vrte::lcm::ControlClientMessage& msg) noexcept;
+    score::concurrency::InterruptibleFuture<void> SendIpcMessage(score::vrte::lcm::ControlClientMessage& msg) noexcept;
 };
 
 }  // namespace lcm

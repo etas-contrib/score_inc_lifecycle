@@ -15,11 +15,11 @@
 #ifndef PROCESSSTATE_NOTIFIER_HPP_INCLUDED
 #define PROCESSSTATE_NOTIFIER_HPP_INCLUDED
 
-#include <etas/vrte/lcm/config.hpp>
-#include <etas/vrte/lcm/process_state_client/posixprocess.hpp>
+#include <score/vrte/lcm/config.hpp>
+#include <score/vrte/lcm/process_state_client/posixprocess.hpp>
 #include "ipc_dropin/socket.hpp"
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -79,5 +79,5 @@ class ProcessStateNotifier final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 #endif

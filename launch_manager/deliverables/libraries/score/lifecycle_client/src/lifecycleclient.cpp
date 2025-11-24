@@ -11,7 +11,7 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <etas/vrte/lcm/lifecycleclientimpl.hpp>
+#include <score/vrte/lcm/lifecycleclientimpl.hpp>
 
 namespace score {
 

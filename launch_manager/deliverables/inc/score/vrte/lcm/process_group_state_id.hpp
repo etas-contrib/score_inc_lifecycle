@@ -17,7 +17,7 @@
 
 #include <score/lcm/identifier_hash.hpp>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -34,6 +34,6 @@ struct ProcessGroupStateID final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  // FUNCTION_STATE_ID_HPP_

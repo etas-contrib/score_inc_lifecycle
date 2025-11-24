@@ -17,7 +17,7 @@
 
 #include <cstdlib>
 
-namespace etas {
+namespace score {
 namespace vrte {
 namespace lcm {
 
@@ -36,6 +36,6 @@ class LifecycleClientExt {
 };  // class LifecycleClientExt
 }  // namespace lcm
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

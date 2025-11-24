@@ -19,7 +19,7 @@
 #include <cstddef>
 #include <cstdint>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -74,6 +74,6 @@ enum class ProcessLimits : std::uint32_t {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  /// CONFIG_HPP_INCLUDED

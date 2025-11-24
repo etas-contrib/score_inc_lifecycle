@@ -11,11 +11,7 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-
-#ifndef SYSEXIT_HPP_INCLUDED
-#define SYSEXIT_HPP_INCLUDED
-
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -23,12 +19,12 @@ namespace lcm {
 
 namespace osal {
 
-/// @brief Call the system exit function, which is marked [noreturn].
-/// The purpose of wrapping this function is so that it may be mocked during tests.
-/// @param status The exit status to be reported to the operating system
-void sysexit(int status);
-}  // namespace osal
+int setSecurityPolicy(const char* policy);
+
+}
+
 }  // namespace lcm
+
 }  // namespace vrte
-}  // namespace etas
-#endif
+
+}  // namespace score

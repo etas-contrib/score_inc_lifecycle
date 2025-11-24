@@ -19,7 +19,7 @@
 
 #include <cstdint>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -36,5 +36,5 @@ std::int32_t setgroups(size_t __n, const gid_t *__groups) noexcept(true);
 }  // namespace osal
 }  // namespace lcm
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 #endif

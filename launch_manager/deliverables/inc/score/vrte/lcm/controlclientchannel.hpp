@@ -16,12 +16,12 @@
 #define CONTROL_CLIENT_CHANNEL_HPP_INCLUDED
 
 #include <atomic>
-#include <etas/vrte/lcm/process_group_state_id.hpp>
-#include <etas/vrte/lcm/osal/osalipccomms.hpp>
+#include <score/vrte/lcm/process_group_state_id.hpp>
+#include <score/vrte/lcm/osal/osalipccomms.hpp>
 #include <condition_variable>
 #include <mutex>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -297,6 +297,6 @@ constexpr ControlClientCodeMapping stateArray[] = {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  //CONTROL_CLIENT_CHANNEL_HPP_INCLUDED

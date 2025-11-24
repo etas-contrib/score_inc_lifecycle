@@ -149,8 +149,8 @@ cc_library(
         "deliverables/libraries/score/process_state_client/src/processstateclient.cpp",
     ],
     hdrs = [
-        "deliverables/inc/etas/vrte/lcm/process_state_client/posixprocess.hpp",
-        "deliverables/inc/etas/vrte/lcm/process_state_client/processstateclient.hpp",
+        "deliverables/inc/score/vrte/lcm/process_state_client/posixprocess.hpp",
+        "deliverables/inc/score/vrte/lcm/process_state_client/processstateclient.hpp",
         "deliverables/inc/score/lcm/exec_error_domain.h",
         "deliverables/inc/score/lcm/identifier_hash.hpp",
     ],

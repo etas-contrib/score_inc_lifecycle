@@ -11,9 +11,9 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <etas/vrte/lcm/config.hpp>
+#include <score/vrte/lcm/config.hpp>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -40,4 +40,4 @@ constexpr std::chrono::milliseconds kLifecycleClientBgThreadSleepTime(
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score

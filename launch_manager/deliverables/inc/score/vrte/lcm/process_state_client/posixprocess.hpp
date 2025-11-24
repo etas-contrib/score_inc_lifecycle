@@ -18,7 +18,7 @@
 #include <score/lcm/identifier_hash.hpp>
 #include <ctime>  // for definition of "timespec"
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -72,6 +72,6 @@ enum class PipcConstants : size_t {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  // POSIXPROCESS_HPP_INCLUDED

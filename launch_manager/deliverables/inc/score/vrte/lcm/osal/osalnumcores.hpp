@@ -17,7 +17,7 @@
 
 #include <cstdint>
 
-namespace etas {
+namespace score {
 namespace vrte {
 namespace lcm {
 namespace osal {
@@ -31,6 +31,6 @@ uint32_t getNumCores();
 }  // namespace osal
 }  // namespace lcm
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 
 #endif

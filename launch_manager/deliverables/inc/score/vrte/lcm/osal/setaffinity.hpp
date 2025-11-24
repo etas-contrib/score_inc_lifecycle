@@ -17,7 +17,7 @@
 
 #include <cstdint>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -40,5 +40,5 @@ int32_t setaffinity(uint32_t cpumask) noexcept(true);
 }  // namespace osal
 }  // namespace lcm
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score
 #endif

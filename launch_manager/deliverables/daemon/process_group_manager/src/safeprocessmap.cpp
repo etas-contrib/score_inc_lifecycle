@@ -11,13 +11,13 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <etas/vrte/lcm/processinfonode.hpp>
-#include <etas/vrte/lcm/safeprocessmap.hpp>
+#include <score/vrte/lcm/processinfonode.hpp>
+#include <score/vrte/lcm/safeprocessmap.hpp>
 #include <cstdio>
 #include <cstdlib>
 #include <thread>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -247,4 +247,4 @@ int32_t SafeProcessMap::insertIfNotTerminated(osal::ProcessID key, ProcessInfoNo
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score

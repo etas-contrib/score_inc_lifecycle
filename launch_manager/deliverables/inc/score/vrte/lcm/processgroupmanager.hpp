@@ -16,21 +16,21 @@
 #define PROCESSGROUPMANAGER_HPP_INCLUDED
 
 #include <score/lcm/identifier_hash.hpp>
-#include <etas/vrte/lcm/configurationmanager.hpp>
-#include <etas/vrte/lcm/graph.hpp>
-#include <etas/vrte/lcm/jobqueue.hpp>
-#include <etas/vrte/lcm/osal/iprocess.hpp>
-#include <etas/vrte/lcm/oshandler.hpp>
-#include <etas/vrte/lcm/process_state_notifier/processstatenotifier.hpp>
-#include <etas/vrte/lcm/processinfonode.hpp>
-#include <etas/vrte/lcm/safeprocessmap.hpp>
-#include <etas/vrte/lcm/controlclientchannel.hpp>
-#include <etas/vrte/lcm/workerthread.hpp>
+#include <score/vrte/lcm/configurationmanager.hpp>
+#include <score/vrte/lcm/graph.hpp>
+#include <score/vrte/lcm/jobqueue.hpp>
+#include <score/vrte/lcm/osal/iprocess.hpp>
+#include <score/vrte/lcm/oshandler.hpp>
+#include <score/vrte/lcm/process_state_notifier/processstatenotifier.hpp>
+#include <score/vrte/lcm/processinfonode.hpp>
+#include <score/vrte/lcm/safeprocessmap.hpp>
+#include <score/vrte/lcm/controlclientchannel.hpp>
+#include <score/vrte/lcm/workerthread.hpp>
 #include <cstdint>
 #include <memory>
 #include <ctime>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -297,6 +297,6 @@ class ProcessGroupManager final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  /// PROCESSGROUPMANAGER_HPP_INCLUDED

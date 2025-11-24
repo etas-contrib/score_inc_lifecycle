@@ -24,14 +24,14 @@
 #include <flatbuffers/flatbuffers.h>
 
 #include <score/lcm/identifier_hash.hpp>
-#include <etas/vrte/lcm/config.hpp>
-#include <etas/vrte/lcm/process_group_state_id.hpp>
-#include <etas/vrte/lcm/osal/iprocess.hpp>
-#include <etas/vrte/lcm/process_state_client/posixprocess.hpp>
+#include <score/vrte/lcm/config.hpp>
+#include <score/vrte/lcm/process_group_state_id.hpp>
+#include <score/vrte/lcm/osal/iprocess.hpp>
+#include <score/vrte/lcm/process_state_client/posixprocess.hpp>
 
 #include "lm_flatcfg_generated.h"
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -100,7 +100,7 @@ struct ProcessGroup final {
 /// It is also responsible for rereading (updating) configuration during software update.
 // RULECHECKER_comment(1, 1, check_incomplete_data_member_construction, "wi 45913 - This struct is POD, which doesn't have user-declared constructor. The rule doesn’t apply.", false)
 class ConfigurationManager final {
-    //    using namespace ::etas::vrte::ucm::ipc;
+    //    using namespace ::score::vrte::ucm::ipc;
    public:
     /// @brief Initializes the configuration manager.
     ///
@@ -135,7 +135,7 @@ class ConfigurationManager final {
     /// @param sw_cluster_id The sofware cluster to process
     /// @return Returns true if the configurations were loaded successfully, false otherwise.
     // bool reloadConfiguration(
-    // const etas::vrte::ucm::ipc::Message::Action action,
+    // const score::vrte::ucm::ipc::Message::Action action,
     // const IdentifierHash& cluster_id );
 
     /// @brief Get the number of OS processes configured for a particular process group.
@@ -482,6 +482,6 @@ class ConfigurationManager final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  /// CONFIGURATIONMANAGER_HPP_INCLUDED

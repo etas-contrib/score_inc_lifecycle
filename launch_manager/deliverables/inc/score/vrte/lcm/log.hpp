@@ -23,7 +23,7 @@
 
 #include "score/mw/log/logger.h"
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -44,7 +44,7 @@ inline score::mw::log::Logger& _getLmLogger() noexcept {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #else  // LC_LOG_SCORE_MW_LOG
 
@@ -55,7 +55,7 @@ inline score::mw::log::Logger& _getLmLogger() noexcept {
 #include <cstdlib>
 #include <string>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -253,15 +253,15 @@ inline Logger& _getLmLogger() noexcept {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  // LC_LOG_SCORE_MW_LOG
 
 // wrapper macros for Launch Manager
-#define LM_LOG_FATAL() (etas::vrte::lcm::_getLmLogger().LogFatal())
-#define LM_LOG_ERROR() (etas::vrte::lcm::_getLmLogger().LogError())
-#define LM_LOG_WARN() (etas::vrte::lcm::_getLmLogger().LogWarn())
-#define LM_LOG_INFO() (etas::vrte::lcm::_getLmLogger().LogInfo())
-#define LM_LOG_DEBUG() (etas::vrte::lcm::_getLmLogger().LogDebug())
+#define LM_LOG_FATAL() (score::vrte::lcm::_getLmLogger().LogFatal())
+#define LM_LOG_ERROR() (score::vrte::lcm::_getLmLogger().LogError())
+#define LM_LOG_WARN() (score::vrte::lcm::_getLmLogger().LogWarn())
+#define LM_LOG_INFO() (score::vrte::lcm::_getLmLogger().LogInfo())
+#define LM_LOG_DEBUG() (score::vrte::lcm::_getLmLogger().LogDebug())
 
 #endif  // LCM_LOG_HPP_INCLUDED

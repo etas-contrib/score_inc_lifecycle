@@ -21,7 +21,7 @@
 #include <vector>
 #include "osal/semaphore.hpp"
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -103,6 +103,6 @@ class JobQueue final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  /// JOB_QUEUE_HPP_INCLUDED

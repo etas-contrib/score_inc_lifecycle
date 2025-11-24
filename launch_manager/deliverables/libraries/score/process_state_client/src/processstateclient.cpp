@@ -11,10 +11,10 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <etas/vrte/lcm/log.hpp>
-#include <etas/vrte/lcm/process_state_client/processstateclient.hpp>
+#include <score/vrte/lcm/log.hpp>
+#include <score/vrte/lcm/process_state_client/processstateclient.hpp>
 
-namespace etas
+namespace score
 {
 
     namespace vrte
@@ -42,31 +42,31 @@ namespace etas
             }
             score::Result<std::optional<PosixProcess>> ProcessStateClient::getNextChangedPosixProcess() noexcept
             {
-                etas::vrte::lcm::PosixProcess changedProcess;
+                score::vrte::lcm::PosixProcess changedProcess;
                 if (m_LCM_PHM_socket.getOverflowFlag())
                 {
                     LM_LOG_ERROR()
                         << "ProcessStateClient::getNextChangedPosixProcess: Overflow occurred, will be reported as kCommunicationError";
-                    return score::Result<std::optional<etas::vrte::lcm::PosixProcess>>{score::MakeUnexpected(
+                    return score::Result<std::optional<score::vrte::lcm::PosixProcess>>{score::MakeUnexpected(
                         score::lcm::ExecErrc::kCommunicationError)};
                 }
                 auto res = m_LCM_PHM_socket.tryReceive(changedProcess);
                 switch (res)
                 {
                 case ipc_dropin::ReturnCode::kOk:
-                    return score::Result<std::optional<etas::vrte::lcm::PosixProcess>>{changedProcess};
+                    return score::Result<std::optional<score::vrte::lcm::PosixProcess>>{changedProcess};
                 case ipc_dropin::ReturnCode::kQueueStateCorrupt:
-                    return score::Result<std::optional<etas::vrte::lcm::PosixProcess>>{score::MakeUnexpected(
+                    return score::Result<std::optional<score::vrte::lcm::PosixProcess>>{score::MakeUnexpected(
                         score::lcm::ExecErrc::kCommunicationError)};
                 case ipc_dropin::ReturnCode::kQueueEmpty:
-                    return score::Result<std::optional<etas::vrte::lcm::PosixProcess>>{
+                    return score::Result<std::optional<score::vrte::lcm::PosixProcess>>{
                         std::nullopt};
                 default:
-                    return score::Result<std::optional<etas::vrte::lcm::PosixProcess>>{score::MakeUnexpected(
+                    return score::Result<std::optional<score::vrte::lcm::PosixProcess>>{score::MakeUnexpected(
                         score::lcm::ExecErrc::kGeneralError)};
                 }
             }
         } // namespace lcm
     } // namespace vrte
 
-} // namespace etas
+} // namespace score

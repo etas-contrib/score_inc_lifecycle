@@ -14,18 +14,18 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#include <etas/vrte/lcm/processgroupmanager.hpp>
-#include <etas/vrte/lcm/log.hpp>
+#include <score/vrte/lcm/processgroupmanager.hpp>
+#include <score/vrte/lcm/log.hpp>
 #include <csignal>
 #include <sys/wait.h>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
 namespace lcm {
 
-using namespace etas::vrte::lcm::osal;
+using namespace score::vrte::lcm::osal;
 
 static std::atomic_bool em_cancelled{false};
 
@@ -118,9 +118,9 @@ inline bool ProcessGroupManager::initializeControlClientHandler() {
     // The name is removed from the file system after creation, memory
     // is mapped and a pointer stored, the FD is kept open.
     ControlClientChannel::nudgeControlClientHandler_ = nullptr;
-    char shm_name[static_cast<uint32_t>(etas::vrte::lcm::ProcessLimits::maxLocalBuffSize)];
+    char shm_name[static_cast<uint32_t>(score::vrte::lcm::ProcessLimits::maxLocalBuffSize)];
 
-    static_cast<void>(snprintf(shm_name, static_cast<uint32_t>(etas::vrte::lcm::ProcessLimits::maxLocalBuffSize),
+    static_cast<void>(snprintf(shm_name, static_cast<uint32_t>(score::vrte::lcm::ProcessLimits::maxLocalBuffSize),
                                "/_nudge~._.~me_"));  // random name
     int fd = shm_open(shm_name, O_CREAT | O_EXCL | O_RDWR, 0U);
 
@@ -164,7 +164,7 @@ inline bool ProcessGroupManager::initializeProcessGroups() {
                 uint32_t num_processes = configuration_manager_.getNumberOfOsProcesses(pg_name).value_or(0);
 
                 if (static_cast<uint64_t>(total_processes_) + num_processes <=
-                    static_cast<uint64_t>(etas::vrte::lcm::ProcessLimits::kMaxProcesses)) {
+                    static_cast<uint64_t>(score::vrte::lcm::ProcessLimits::kMaxProcesses)) {
                     process_groups_.push_back(std::make_shared<Graph>(num_processes, this));
                     total_processes_ += num_processes;
                 } else {
@@ -613,4 +613,4 @@ std::shared_ptr<JobQueue<ProcessInfoNode>> ProcessGroupManager::getWorkerJobs() 
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score

@@ -11,12 +11,12 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <etas/vrte/lcm/config.hpp>
-#include <etas/vrte/lcm/jobqueue.hpp>
-#include <etas/vrte/lcm/osal/semaphore.hpp>
+#include <score/vrte/lcm/config.hpp>
+#include <score/vrte/lcm/jobqueue.hpp>
+#include <score/vrte/lcm/osal/semaphore.hpp>
 #include <cstdio>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -53,7 +53,7 @@ template <class T>
 bool JobQueue<T>::addJobToQueue(std::shared_ptr<T> job) {
     bool result = false;
 
-    if (osal::OsalReturnType::kSuccess == num_spaces_.timedWait(etas::vrte::lcm::kMaxQueueDelay)) {
+    if (osal::OsalReturnType::kSuccess == num_spaces_.timedWait(score::vrte::lcm::kMaxQueueDelay)) {
         std::size_t index = static_cast<std::size_t>(in_index_.fetch_add(1U, std::memory_order_relaxed)) % capacity_;
 
         std::atomic_store_explicit(&the_items_[index], job, std::memory_order_release);
@@ -87,4 +87,4 @@ template class JobQueue<ProcessInfoNode>;
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score

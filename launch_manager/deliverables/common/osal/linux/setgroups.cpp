@@ -14,9 +14,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include <etas/vrte/lcm/osal/setgroups.hpp>
+#include <score/vrte/lcm/osal/setgroups.hpp>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -30,4 +30,4 @@ int setgroups(size_t __n, const gid_t *__groups) noexcept(true) {
 }  // namespace osal
 }  // namespace lcm
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

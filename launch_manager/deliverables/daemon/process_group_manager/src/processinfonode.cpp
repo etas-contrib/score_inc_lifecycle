@@ -11,13 +11,13 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <etas/vrte/lcm/processgroupmanager.hpp>
-#include <etas/vrte/lcm/graph.hpp>
-#include <etas/vrte/lcm/log.hpp>
-#include <etas/vrte/lcm/osal/osalipccomms.hpp>
-#include <etas/vrte/lcm/processinfonode.hpp>
+#include <score/vrte/lcm/processgroupmanager.hpp>
+#include <score/vrte/lcm/graph.hpp>
+#include <score/vrte/lcm/log.hpp>
+#include <score/vrte/lcm/osal/osalipccomms.hpp>
+#include <score/vrte/lcm/processinfonode.hpp>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -437,7 +437,7 @@ inline void ProcessInfoNode::handleForcedTermination() {
     while ((osal::OsalReturnType::kSuccess ==
             graph_->getProcessGroupManager()->getProcessInterface()->forceTermination(pid_)) &&
            (graph_->getState() == GraphState::kInTransition) &&
-           (terminator_.timedWait(etas::vrte::lcm::kMaxSigKillDelay) != osal::OsalReturnType::kSuccess)) {
+           (terminator_.timedWait(score::vrte::lcm::kMaxSigKillDelay) != osal::OsalReturnType::kSuccess)) {
         LM_LOG_FATAL() << "Process" << process_index_ << "(" << config_->startup_config_.short_name_
                        << ") did not respond to SIGKILL!!";
     }
@@ -491,4 +491,4 @@ ControlClientChannelP ProcessInfoNode::getControlClientChannel() {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score

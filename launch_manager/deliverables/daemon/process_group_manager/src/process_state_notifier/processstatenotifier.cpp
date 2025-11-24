@@ -11,10 +11,10 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <etas/vrte/lcm/log.hpp>
-#include <etas/vrte/lcm/process_state_notifier/processstatenotifier.hpp>
+#include <score/vrte/lcm/log.hpp>
+#include <score/vrte/lcm/process_state_notifier/processstatenotifier.hpp>
 
-namespace etas {
+namespace score {
 namespace vrte {
 namespace lcm {
 
@@ -50,4 +50,4 @@ bool ProcessStateNotifier::queuePosixProcess(const PosixProcess& f_posixProcess)
 
 }  // namespace lcm
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

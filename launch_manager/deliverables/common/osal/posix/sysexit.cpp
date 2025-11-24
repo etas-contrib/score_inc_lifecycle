@@ -13,7 +13,7 @@
 
 #include <cstdlib>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -41,4 +41,4 @@ void sysexit(int status) {
 }  // namespace osal
 }  // namespace lcm
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

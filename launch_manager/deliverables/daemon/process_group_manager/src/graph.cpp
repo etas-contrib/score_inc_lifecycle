@@ -13,13 +13,13 @@
 
 #include "score/span.hpp"
 
-#include <etas/vrte/lcm/processgroupmanager.hpp>
-#include <etas/vrte/lcm/graph.hpp>
-#include <etas/vrte/lcm/log.hpp>
-#include <etas/vrte/lcm/processinfonode.hpp>
+#include <score/vrte/lcm/processgroupmanager.hpp>
+#include <score/vrte/lcm/graph.hpp>
+#include <score/vrte/lcm/log.hpp>
+#include <score/vrte/lcm/processinfonode.hpp>
 #include <ctime>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -501,4 +501,4 @@ std::chrono::time_point<std::chrono::steady_clock> Graph::getRequestStartTime() 
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score

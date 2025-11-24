@@ -19,10 +19,10 @@
 #include "score/result/result.h"
 #include <score/lcm/exec_error_domain.h>
 
-#include <etas/vrte/lcm/process_state_client/posixprocess.hpp>
+#include <score/vrte/lcm/process_state_client/posixprocess.hpp>
 #include "ipc_dropin/socket.hpp"
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -76,6 +76,6 @@ class ProcessStateClient final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  // PROCESSSTATECLIENT_HPP_INCLUDED

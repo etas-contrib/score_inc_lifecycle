@@ -15,12 +15,12 @@
 #ifndef OS_HANDLER_HPP_INCLUDED
 #define OS_HANDLER_HPP_INCLUDED
 
-#include <etas/vrte/lcm/osal/iprocess.hpp>
-#include <etas/vrte/lcm/safeprocessmap.hpp>
+#include <score/vrte/lcm/osal/iprocess.hpp>
+#include <score/vrte/lcm/safeprocessmap.hpp>
 #include <chrono>
 #include <thread>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -87,13 +87,13 @@ class OsHandler final {
     osal::IProcess& process_interface_;
 
     /// @brief Thread object to manage execution of the run method.
-    std::thread os_handler_{&etas::vrte::lcm::OsHandler::run, this};
+    std::thread os_handler_{&score::vrte::lcm::OsHandler::run, this};
 };
 
 }  // namespace lcm
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  /// OS_HANDLER_HPP_INCLUDED

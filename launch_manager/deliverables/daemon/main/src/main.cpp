@@ -14,11 +14,11 @@
 #include <unistd.h>
 #include <iostream>
 
-#include <etas/vrte/lcm/processgroupmanager.hpp>
-#include <etas/vrte/lcm/log.hpp>
+#include <score/vrte/lcm/processgroupmanager.hpp>
+#include <score/vrte/lcm/log.hpp>
 
 using namespace std;
-using namespace etas::vrte::lcm;
+using namespace score::vrte::lcm;
 
 /// @brief Initializes the LCM daemon.
 /// This function initializes the LCM daemon by calling the initialize() method

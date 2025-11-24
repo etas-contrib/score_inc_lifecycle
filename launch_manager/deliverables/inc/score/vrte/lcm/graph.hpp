@@ -27,7 +27,7 @@
 #include "osal/semaphore.hpp"
 #include "processinfonode.hpp"
 #include "controlclientchannel.hpp"
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -449,6 +449,6 @@ class Graph final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  /// GRAPH_HPP_INCLUDED

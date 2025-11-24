@@ -13,8 +13,8 @@
 #include <internal/ExcludeCoverageAdapter.h>
 #include <sys/neutrino.h>
 
-#include <etas/vrte/lcm/osal/setaffinity.hpp>
-namespace etas {
+#include <score/vrte/lcm/osal/setaffinity.hpp>
+namespace score {
 
 namespace vrte {
 
@@ -30,4 +30,4 @@ int32_t setaffinity(uint32_t cpumask) noexcept(true) {
 }  // namespace osal
 }  // namespace lcm
 }  // namespace vrte
-}  // namespace etas
+}  // namespace score

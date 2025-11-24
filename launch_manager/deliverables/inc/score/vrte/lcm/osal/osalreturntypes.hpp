@@ -19,7 +19,7 @@
 
 #include <cstdint>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -69,6 +69,6 @@ enum class OsalReturnType {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  // OSAL_ERROR_TYPES_HPP_INCLUDED

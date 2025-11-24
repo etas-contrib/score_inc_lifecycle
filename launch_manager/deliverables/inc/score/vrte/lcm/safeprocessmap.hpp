@@ -16,11 +16,11 @@
 #define SAFE_PROCESS_MAP_HPP_INCLUDED
 
 #include <atomic>
-#include <etas/vrte/lcm/osal/iprocess.hpp>
-#include <etas/vrte/lcm/processinfonode.hpp>
+#include <score/vrte/lcm/osal/iprocess.hpp>
+#include <score/vrte/lcm/processinfonode.hpp>
 #include <cstdint>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -182,6 +182,6 @@ class SafeProcessMap final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  /// SAFE_PROCESS_MAP_HPP_INCLUDED

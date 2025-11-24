@@ -21,7 +21,7 @@
 
 #include "osalreturntypes.hpp"
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -122,6 +122,6 @@ class Semaphore final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  /// SEMAPHORE_HPP_INCLUDED

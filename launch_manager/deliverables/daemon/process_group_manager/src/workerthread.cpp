@@ -11,10 +11,10 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <etas/vrte/lcm/processinfonode.hpp>
-#include <etas/vrte/lcm/workerthread.hpp>
+#include <score/vrte/lcm/processinfonode.hpp>
+#include <score/vrte/lcm/workerthread.hpp>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -60,4 +60,4 @@ template class WorkerThread<ProcessInfoNode>;
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score

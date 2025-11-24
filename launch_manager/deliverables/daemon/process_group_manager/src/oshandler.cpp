@@ -11,9 +11,9 @@
 * SPDX-License-Identifier: Apache-2.0
 ********************************************************************************/
 
-#include <etas/vrte/lcm/oshandler.hpp>
+#include <score/vrte/lcm/oshandler.hpp>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -41,4 +41,4 @@ void OsHandler::run(void) {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score

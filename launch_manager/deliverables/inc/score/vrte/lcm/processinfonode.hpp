@@ -15,10 +15,10 @@
 #define _INCLUDED_PROCESSINFONODE_
 
 #include <atomic>
-#include <etas/vrte/lcm/configurationmanager.hpp>
-#include <etas/vrte/lcm/controlclientchannel.hpp>
+#include <score/vrte/lcm/configurationmanager.hpp>
+#include <score/vrte/lcm/controlclientchannel.hpp>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -287,6 +287,6 @@ class ProcessInfoNode final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif

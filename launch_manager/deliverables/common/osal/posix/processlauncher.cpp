@@ -20,14 +20,14 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-#include <etas/vrte/lcm/log.hpp>
-#include <etas/vrte/lcm/osal/iprocess.hpp>
-#include <etas/vrte/lcm/osal/osalipccomms.hpp>
-#include <etas/vrte/lcm/osal/securitypolicy.hpp>
-#include <etas/vrte/lcm/osal/setaffinity.hpp>
-#include <etas/vrte/lcm/osal/setgroups.hpp>
-#include <etas/vrte/lcm/osal/sysexit.hpp>
-#include <etas/vrte/lcm/controlclientchannel.hpp>
+#include <score/vrte/lcm/log.hpp>
+#include <score/vrte/lcm/osal/iprocess.hpp>
+#include <score/vrte/lcm/osal/osalipccomms.hpp>
+#include <score/vrte/lcm/osal/securitypolicy.hpp>
+#include <score/vrte/lcm/osal/setaffinity.hpp>
+#include <score/vrte/lcm/osal/setgroups.hpp>
+#include <score/vrte/lcm/osal/sysexit.hpp>
+#include <score/vrte/lcm/controlclientchannel.hpp>
 #include <cerrno>
 #include <csignal>
 #include <cstdio>
@@ -39,11 +39,11 @@ constexpr int kPosixSuccess = 0;
 
 namespace {
 
-using etas::vrte::lcm::osal::CommsType;
-using etas::vrte::lcm::osal::IpcCommsSync;
-using etas::vrte::lcm::osal::sysexit;
+using score::vrte::lcm::osal::CommsType;
+using score::vrte::lcm::osal::IpcCommsSync;
+using score::vrte::lcm::osal::sysexit;
 
-void handleComms(etas::vrte::lcm::osal::ChildProcessConfig& param) {
+void handleComms(score::vrte::lcm::osal::ChildProcessConfig& param) {
     if (param.shared_block) {
         param.fd = dup2(param.fd, param.shared_block->sync_fd);  // always make sure we are using fd=3
         param.shared_block->pid_ = getpid();                     // Store pid for check at client end
@@ -80,7 +80,7 @@ void handleComms(etas::vrte::lcm::osal::ChildProcessConfig& param) {
     }
 }
 
-void changeCurrentWorkingDirectory(const etas::vrte::lcm::osal::OsalConfig& config) {
+void changeCurrentWorkingDirectory(const score::vrte::lcm::osal::OsalConfig& config) {
     // Change current working directory to the same as the executable
     constexpr size_t string_size = static_cast<size_t>(PATH_MAX);
     // Notice that this next static variable is duplicated by the fork() and so does not need
@@ -99,7 +99,7 @@ void changeCurrentWorkingDirectory(const etas::vrte::lcm::osal::OsalConfig& conf
     }
 }
 
-void implementMemoryResourceLimits(const etas::vrte::lcm::osal::OsalConfig& config) {
+void implementMemoryResourceLimits(const score::vrte::lcm::osal::OsalConfig& config) {
     rlimit limit;
 
     if (config.resource_limits_.data_ != 0U) {
@@ -143,9 +143,9 @@ void implementMemoryResourceLimits(const etas::vrte::lcm::osal::OsalConfig& conf
     }
 }
 
-void changeSecurityPolicy(const etas::vrte::lcm::osal::OsalConfig& config) {
+void changeSecurityPolicy(const score::vrte::lcm::osal::OsalConfig& config) {
     if (config.security_policy_ != "") {
-        if (etas::vrte::lcm::osal::setSecurityPolicy(config.security_policy_.c_str()) != 0) {
+        if (score::vrte::lcm::osal::setSecurityPolicy(config.security_policy_.c_str()) != 0) {
             LM_LOG_ERROR() << "[New process] changeSecurityPolicy(" << config.security_policy_
                            << ") failed:" << strerror(errno);
             sysexit(EXIT_FAILURE);
@@ -155,7 +155,7 @@ void changeSecurityPolicy(const etas::vrte::lcm::osal::OsalConfig& config) {
 
 }  // namespace
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -216,14 +216,14 @@ OsalReturnType IProcess::startProcess(ProcessID* pid, IpcCommsP* block, const Os
 
 inline bool IProcess::setupComms(IpcCommsP& block, int& fd, const OsalConfig& config) {
     bool comms_result = true;
-    char shm_name[static_cast<uint32_t>(etas::vrte::lcm::ProcessLimits::maxLocalBuffSize)];
+    char shm_name[static_cast<uint32_t>(score::vrte::lcm::ProcessLimits::maxLocalBuffSize)];
     size_t length = sizeof(IpcCommsSync);
 
     if (CommsType::kControlClient == config.comms_type_) {
         length += sizeof(ControlClientChannel);
     }
 
-    static_cast<void>(snprintf(shm_name, static_cast<uint32_t>(etas::vrte::lcm::ProcessLimits::maxLocalBuffSize),
+    static_cast<void>(snprintf(shm_name, static_cast<uint32_t>(score::vrte::lcm::ProcessLimits::maxLocalBuffSize),
                                "/ipc_shared_mem%u", shm_name_counter++));
 
     fd = shm_open(shm_name, O_CREAT | O_EXCL | O_RDWR, 0U);
@@ -469,4 +469,4 @@ OsalReturnType IProcess::waitForkRunning(IpcCommsP sync, std::chrono::millisecon
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score

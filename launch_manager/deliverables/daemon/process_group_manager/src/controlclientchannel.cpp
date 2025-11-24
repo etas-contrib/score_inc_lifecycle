@@ -13,12 +13,12 @@
 
 #include <sys/mman.h>
 
-#include <etas/vrte/lcm/config.hpp>
-#include <etas/vrte/lcm/controlclientchannel.hpp>
+#include <score/vrte/lcm/config.hpp>
+#include <score/vrte/lcm/controlclientchannel.hpp>
 #include <cstring>
 #include <thread>
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -223,4 +223,4 @@ std::mutex ControlClientChannel::init_mutex_{};
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score

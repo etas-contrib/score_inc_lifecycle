@@ -17,12 +17,12 @@
 
 #include <sys/mman.h>
 
-#include <etas/vrte/lcm/log.hpp>
+#include <score/vrte/lcm/log.hpp>
 #include <memory>
 
 #include "semaphore.hpp"
 
-namespace etas {
+namespace score {
 
 namespace vrte {
 
@@ -127,6 +127,6 @@ struct IpcCommsSync final {
 
 }  // namespace vrte
 
-}  // namespace etas
+}  // namespace score
 
 #endif  // OSAL_IPC_COMMS_HPP_INCLUDED
